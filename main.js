@@ -10,13 +10,47 @@ server.use(express.static(__dirname));
 
 
 // Página Home default
+
 server.get("/", (req, res) => {
     res.sendFile(__dirname + "/static/index.html");
 })
 
-// Criar um QR Code
-server.post("/qrcode/gerar", (req, res) => {
-    QRCode.toDataURL(req.body, function (err, url) {
+// Criar um QR Code aleatório para teste, direcionando para o Google
+
+server.get("/qrcode/teste", (req, res) => {
+  QRCode.toString( "www.google.com" , function (err, url) {
+      res.send(url);
+    })
+})
+
+// Cria um QR Code em String com base no que é enviado na requisição
+
+server.post("/qrcode/string", (req, res) => {
+  QRCode.toString(req.body.texto, function (err, url) {
+      res.send(url);
+    })
+})
+
+// Cria um QR Code em DataURL com base no que é enviado na requisição
+
+server.post("/qrcode/dataurl", (req, res) => {
+  QRCode.toDataURL(req.body.texto, function (err, url) {
+      res.send(url);
+    })
+})
+
+// Cria um QR Code em PNG e salva com base no que é enviado na requisição (TESTE)
+
+server.post("/qrcode/file", (req, res) => {
+  QRCode.toFile(req.body.local, req.body.texto, function (err, url) {
+      res.send(url);
+    })
+})
+
+// Retorna representação do código de QR Code informado
+
+server.get("/qrcode/consulta", (req, res) => {
+    QRCode.toDataURL(req.body.codigo, function (err, url) {
         res.send(url);
       })
 })
@@ -24,7 +58,7 @@ server.post("/qrcode/gerar", (req, res) => {
 // CRUD para Peças
 
 server.post("/peca", (req, res) => {
-  res.send("Peça cadastrada com sucesso!\n" + req.body)
+  res.send("Peça cadastrada com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.get("/peca", (req, res) => {
@@ -38,11 +72,11 @@ server.get("/peca", (req, res) => {
 });
 
 server.put("/peca", (req, res) => {
-  res.send("Peça de ID " + req.body.Id + " foi alterada com sucesso!\n" + req.body)
+  res.send("Peça de ID " + req.body.Id + " foi alterada com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.delete("/peca", (req, res) => {
-  res.send("Peça de ID " + req.body.Id + " foi removida com sucesso!\n" + req.body)
+  res.send("Peça de ID " + req.body.Id + " foi removida com sucesso!\n" + JSON.stringify(req.body))
 });
 
 // Fim CRUD de Peças
@@ -50,7 +84,7 @@ server.delete("/peca", (req, res) => {
 // CRUD para Cargo
 
 server.post("/cargo", (req, res) => {
-  res.send("Cargo cadastrado com sucesso!\n" + req.body)
+  res.send("Cargo cadastrado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.get("/cargo", (req, res) => {
@@ -64,45 +98,19 @@ server.get("/cargo", (req, res) => {
 });
 
 server.put("/cargo", (req, res) => {
-  res.send("Cargo de ID " + req.body.Id + " foi alterado com sucesso!\n" + req.body)
+  res.send("Cargo de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.delete("/cargo", (req, res) => {
-  res.send("Cargo de ID " + req.body.Id + " foi removido com sucesso!\n" + req.body)
+  res.send("Cargo de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
 });
 
 // Fim CRUD de Cargo
 
-// CRUD para Criticidade
-
-server.post("/criticidade", (req, res) => {
-  res.send("Criticidade cadastrada com sucesso!\n" + req.body)
-});
-
-server.get("/criticidade", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/criticidade.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
-});
-
-server.put("/criticidade", (req, res) => {
-  res.send("Criticidade de ID " + req.body.Id + " foi alterado com sucesso!\n" + req.body)
-});
-
-server.delete("/peca", (req, res) => {
-  res.send("Criticidade de ID " + req.body.Id + " foi removido com sucesso!\n" + req.body)
-});
-
-// Fim CRUD de Criticidade
-
 // CRUD para Equipamento
 
 server.post("/equipamento", (req, res) => {
-  res.send("equipamento cadastrado com sucesso!\n" + req.body)
+  res.send("equipamento cadastrado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.get("/equipamento", (req, res) => {
@@ -116,11 +124,11 @@ server.get("/equipamento", (req, res) => {
 });
 
 server.put("/equipamento", (req, res) => {
-  res.send("Equipamento de ID " + req.body.Id + " foi alterado com sucesso!\n" + req.body)
+  res.send("Equipamento de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.delete("/equipamento", (req, res) => {
-  res.send("Equipamento de ID " + req.body.Id + " foi removido com sucesso!\n" + req.body)
+  res.send("Equipamento de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
 });
 
 // Fim CRUD de Equipamento
@@ -128,7 +136,7 @@ server.delete("/equipamento", (req, res) => {
 // CRUD para Funcionario
 
 server.post("/funcionario", (req, res) => {
-  res.send("funcionario cadastrado com sucesso!\n" + req.body)
+  res.send("funcionario cadastrado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.get("/funcionario", (req, res) => {
@@ -142,11 +150,11 @@ server.get("/funcionario", (req, res) => {
 });
 
 server.put("/funcionario", (req, res) => {
-  res.send("Funcionario de ID " + req.body.Id + " foi alterado com sucesso!\n" + req.body)
+  res.send("Funcionario de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.delete("/funcionario", (req, res) => {
-  res.send("Funcionario de ID " + req.body.Id + " foi removido com sucesso!\n" + req.body)
+  res.send("Funcionario de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
 });
 
 // Fim CRUD de Funcionario
@@ -154,7 +162,7 @@ server.delete("/funcionario", (req, res) => {
 // CRUD para QRCode
 
 server.post("/qrcode", (req, res) => {
-  res.send("QRCode cadastrado com sucesso!\n" + req.body)
+  res.send("QRCode cadastrado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.get("/qrcode", (req, res) => {
@@ -168,11 +176,11 @@ server.get("/qrcode", (req, res) => {
 });
 
 server.put("/qrcode", (req, res) => {
-  res.send("QRCode de ID " + req.body.Id + " foi alterado com sucesso!\n" + req.body)
+  res.send("QRCode de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.delete("/qrcode", (req, res) => {
-  res.send("QRCode de ID " + req.body.Id + " foi removido com sucesso!\n" + req.body)
+  res.send("QRCode de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
 });
 
 // Fim CRUD de QRCode
@@ -180,7 +188,7 @@ server.delete("/qrcode", (req, res) => {
 // CRUD para Setor
 
 server.post("/setor", (req, res) => {
-  res.send("Setor cadastrado com sucesso!\n" + req.body)
+  res.send("Setor cadastrado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.get("/setor", (req, res) => {
@@ -194,14 +202,40 @@ server.get("/setor", (req, res) => {
 });
 
 server.put("/setor", (req, res) => {
-  res.send("Setor de ID " + req.body.Id + " foi alterado com sucesso!\n" + req.body)
+  res.send("Setor de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
 });
 
 server.delete("/setor", (req, res) => {
-  res.send("Setor de ID " + req.body.Id + " foi removido com sucesso!\n" + req.body)
+  res.send("Setor de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
 });
 
 // Fim CRUD de Setor
+
+// CRUD para Manutenção
+
+server.post("/manutencao", (req, res) => {
+  res.send("Manutenção cadastrada com sucesso!\n" + JSON.stringify(req.body))
+});
+
+server.get("/manutencao", (req, res) => {
+    fs.readFile(__dirname + '/assets/mock/manutencao.json', 'utf8' , (err, data) => {
+        if (err) {
+          console.error(err);
+          return ;
+        }
+        res.send (data)
+      })
+});
+
+server.put("/manutencao", (req, res) => {
+  res.send("Manutenção de ID " + req.body.Id + " foi alterada com sucesso!\n" + JSON.stringify(req.body))
+});
+
+server.delete("/manutencao", (req, res) => {
+  res.send("Manutenção de ID " + req.body.Id + " foi removida com sucesso!\n" + JSON.stringify(req.body))
+});
+
+// Fim CRUD de Manutenção
 
 server.listen(3000);
 
