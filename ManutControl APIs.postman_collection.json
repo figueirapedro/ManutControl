@@ -1,0 +1,903 @@
+{
+	"info": {
+		"_postman_id": "bf7e7af9-0506-4477-ad9a-339518bedf55",
+		"name": "ManutControl APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Manutenção",
+			"item": [
+				{
+					"name": "localhost:3000/manutencao",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Peças",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Peça",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Peça",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Peça",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Peça",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cargo",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Cargo",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Cargo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Cargo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Cargo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Equipamento",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Equipamento",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Equipamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Equipamento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Equipamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/equipamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionário",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Funcionario",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Funcionario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Funcionamento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Funcionario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/equipamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QRCode",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get QRCode",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Consulta QRCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "codigo",
+									"value": "",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/qrcode/consulta",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"qrcode",
+								"consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post QRCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put QRCode",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete QRCode",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/equipamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode Teste Google",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode para String",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/qrcode/string",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"qrcode",
+								"string"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode para DataURL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/qrcode/string",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"qrcode",
+								"string"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode para File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/qrcode/string",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"qrcode",
+								"string"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setor",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Setor",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Setor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Setor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Setor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/equipamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manutenção",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Manutenção",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Manutenção",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Manutenção",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Manutenção",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/equipamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
