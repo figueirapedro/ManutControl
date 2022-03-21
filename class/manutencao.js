@@ -7,7 +7,7 @@ class Manutencao {
     Equipamento;
     QRCode;
 
-    constructor ( Id, Descricao, Tipo, Funcionario, Data, Equipamento, QRCode ) {
+    constructor(Id, Descricao, Tipo, Funcionario, Data, Equipamento, QRCode) {
         this.Id = Id;
         this.Descricao = Descricao;
         this.Tipo = Tipo;
@@ -15,61 +15,61 @@ class Manutencao {
         this.Data = Data;
         this.Equipamento = Equipamento;
         this.QRCode = QRCode;
-    } 
-    
-    setId (Id) {
+    }
+
+    setId(Id) {
         this.Id = Id;
-    }    
+    }
 
-    setDescricao (Descricao) {
+    setDescricao(Descricao) {
         this.Descricao = Descricao;
-    }    
+    }
 
-    setTipo (Tipo) {
+    setTipo(Tipo) {
         this.Tipo = Tipo;
-    }    
+    }
 
-    setFuncionario (Funcionario) {
+    setFuncionario(Funcionario) {
         this.Funcionario = Funcionario;
-    }    
+    }
 
-    setData (Data) {
+    setData(Data) {
         this.Data = Data;
-    }    
+    }
 
-    setEquipamento (Equipamento) {
+    setEquipamento(Equipamento) {
         this.Equipamento = Equipamento;
-    }    
+    }
 
-    setQRCode (QRCode) {
+    setQRCode(QRCode) {
         this.QRCode = QRCode;
-    }    
+    }
 
-    getId () {
+    getId() {
         return this.Id;
     }
 
-    getDescricao () {
+    getDescricao() {
         return this.Descricao;
     }
 
-    getTipo () {
+    getTipo() {
         return this.Tipo;
     }
 
-    getFuncionario () {
+    getFuncionario() {
         return this.Funcionario;
     }
 
-    getData () {
+    getData() {
         return this.Data;
     }
 
-    getEquipamento () {
+    getEquipamento() {
         return this.Equipamento;
     }
 
-    getQRCode () {
+    getQRCode() {
         return this.QRCode;
     }
 }

@@ -1,6 +1,16 @@
 const express = require('express');
 const QRCode = require('qrcode');
 const fs = require('fs');
+const AES = require("crypto-js/aes");
+
+var key;
+fs.readFile(__dirname + '/assets/aes-key.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  key = data;
+});
 
 const server = express();
 
@@ -8,51 +18,64 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }))
 server.use(express.static(__dirname));
 
+// Login
+server.post("/login/", (req, res) => {
+  const senha = AES.encrypt(req.body.senha, key).toString();
+  const login = req.body.login;
+  req.body.cript = senha;
+
+  res.send("Validando Login....\n\n" + JSON.stringify(req.body));
+})
+
+// Teste para Criptografar Senhas
+server.post("/login/criptografar", (req, res) => {
+  res.send(AES.encrypt(req.body.senha, key).toString());
+})
 
 // Página Home default
 
 server.get("/", (req, res) => {
-    res.sendFile(__dirname + "/static/index.html");
+  res.sendFile(__dirname + "/static/index.html");
 })
 
 // Criar um QR Code aleatório para teste, direcionando para o Google
 
 server.get("/qrcode/teste", (req, res) => {
-  QRCode.toString( "www.google.com" , function (err, url) {
-      res.send(url);
-    })
+  QRCode.toString("www.google.com", function (err, url) {
+    res.send(url);
+  })
 })
 
 // Cria um QR Code em String com base no que é enviado na requisição
 
 server.post("/qrcode/string", (req, res) => {
   QRCode.toString(req.body.texto, function (err, url) {
-      res.send(url);
-    })
+    res.send(url);
+  })
 })
 
 // Cria um QR Code em DataURL com base no que é enviado na requisição
 
 server.post("/qrcode/dataurl", (req, res) => {
   QRCode.toDataURL(req.body.texto, function (err, url) {
-      res.send(url);
-    })
+    res.send(url);
+  })
 })
 
 // Cria um QR Code em PNG e salva com base no que é enviado na requisição (TESTE)
 
 server.post("/qrcode/file", (req, res) => {
   QRCode.toFile(req.body.local, req.body.texto, function (err, url) {
-      res.send(url);
-    })
+    res.send(url);
+  })
 })
 
 // Retorna representação do código de QR Code informado
 
 server.get("/qrcode/consulta", (req, res) => {
-    QRCode.toDataURL(req.body.codigo, function (err, url) {
-        res.send(url);
-      })
+  QRCode.toDataURL(req.body.codigo, function (err, url) {
+    res.send(url);
+  })
 })
 
 // CRUD para Peças
@@ -62,13 +85,13 @@ server.post("/peca", (req, res) => {
 });
 
 server.get("/peca", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/peca.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/peca.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/peca", (req, res) => {
@@ -88,13 +111,13 @@ server.post("/cargo", (req, res) => {
 });
 
 server.get("/cargo", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/cargo.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/cargo.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/cargo", (req, res) => {
@@ -114,13 +137,13 @@ server.post("/equipamento", (req, res) => {
 });
 
 server.get("/equipamento", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/equipamento.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/equipamento.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/equipamento", (req, res) => {
@@ -140,13 +163,13 @@ server.post("/funcionario", (req, res) => {
 });
 
 server.get("/funcionario", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/funcionario.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/funcionario.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/funcionario", (req, res) => {
@@ -166,13 +189,13 @@ server.post("/qrcode", (req, res) => {
 });
 
 server.get("/qrcode", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/qrcode.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/qrcode.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/qrcode", (req, res) => {
@@ -192,13 +215,13 @@ server.post("/setor", (req, res) => {
 });
 
 server.get("/setor", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/setor.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/setor.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/setor", (req, res) => {
@@ -218,13 +241,13 @@ server.post("/manutencao", (req, res) => {
 });
 
 server.get("/manutencao", (req, res) => {
-    fs.readFile(__dirname + '/assets/mock/manutencao.json', 'utf8' , (err, data) => {
-        if (err) {
-          console.error(err);
-          return ;
-        }
-        res.send (data)
-      })
+  fs.readFile(__dirname + '/assets/mock/manutencao.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.send(data)
+  })
 });
 
 server.put("/manutencao", (req, res) => {
@@ -239,4 +262,4 @@ server.delete("/manutencao", (req, res) => {
 
 server.listen(3000);
 
-console.log("Executando...")
+console.log("Executando...\n");

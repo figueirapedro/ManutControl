@@ -1,5 +1,5 @@
 class Equipamento {
-    
+
     id;
     descricao;
     dataEntrada;
@@ -10,7 +10,7 @@ class Equipamento {
     criticidade;
     QRCode;
 
-    constructor (   id, descricao, dataEntrada, tag, status, pecas, local, criticidade, QRCode ) {
+    constructor(id, descricao, dataEntrada, tag, status, pecas, local, criticidade, QRCode) {
         this.id = id;
         this.descricao = descricao;
         this.dataEntrada = dataEntrada;
@@ -22,7 +22,7 @@ class Equipamento {
         this.QRCode = QRCode;
     }
 
-    constructor (id, descricao, dataEntrada, tag, status, pecas, local, criticidade) {
+    constructor(id, descricao, dataEntrada, tag, status, pecas, local, criticidade) {
         this.id = id;
         this.descricao = descricao;
         this.dataEntrada = dataEntrada;
@@ -33,47 +33,47 @@ class Equipamento {
         this.criticidade = criticidade;
     }
 
-    setId (id) {
+    setId(id) {
         this.id = id;
     }
 
-    setDescricao (descricao) {
+    setDescricao(descricao) {
         this.descricao = descricao;
     }
 
-    setDataEntrada (dataEntrada) {
+    setDataEntrada(dataEntrada) {
         this.dataEntrada = dataEntrada;
     }
 
-    setTag (tag) {
+    setTag(tag) {
         this.tag = tag;
     }
 
-    setStatus (status) {
+    setStatus(status) {
         this.status = status;
     }
 
-    setPecas (pecas) {
+    setPecas(pecas) {
         this.pecas = pecas;
     }
 
-    setLocal (local) {
+    setLocal(local) {
         this.local = local;
     }
 
-    setCriticidade (criticidade) {
+    setCriticidade(criticidade) {
         this.criticidade = criticidade;
-    }  
-    
-    setQRcode (QRCode) {
+    }
+
+    setQRcode(QRCode) {
         this.QRCode = QRCode;
-    }    
+    }
 
-    getQRCode () {
+    getQRCode() {
         return this.QRCode;
     }
 
-    getId () {
+    getId() {
         return this.id;
     }
 

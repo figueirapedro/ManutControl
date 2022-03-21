@@ -4,48 +4,48 @@ class QRCode {
     dataCriacao;
     dataAtualizacao;
 
-    constructor (   Id, Code, dataCriacao, dataAtualizacao  ) {
+    constructor(Id, Code, dataCriacao, dataAtualizacao) {
         this.Id = Id;
         this.Code = Code;
         this.dataCriacao = dataCriacao;
         this.dataAtualizacao = dataAtualizacao;
     }
 
-    constructor (   Id, Code, dataCriacao   ) {
+    constructor(Id, Code, dataCriacao) {
         this.Id = Id;
         this.Code = Code;
         this.dataCriacao = dataCriacao;
     }
 
-    getId () {
+    getId() {
         return this.Id;
     }
 
-    getCode () {
+    getCode() {
         return this.Code;
     }
 
-    getdataCriacao () {
+    getdataCriacao() {
         return this.dataCriacao;
     }
 
-    getdataAtualizacao () {
+    getdataAtualizacao() {
         return this.dataAtualizacao;
     }
 
-    setId (Id) {
+    setId(Id) {
         this.Id = Id;
     }
 
-    setCode (Code) {
+    setCode(Code) {
         this.Code = Code;
     }
 
-    setdataCriacao (dataCriacao) {
+    setdataCriacao(dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
-    setdataAtualizacao (dataAtualizacao) {
+    setdataAtualizacao(dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
     }
 

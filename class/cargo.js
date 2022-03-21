@@ -2,23 +2,23 @@ class Cargo {
     Id;
     Descricao;
 
-    constructor (   Id, Descricao   ) {
+    constructor(Id, Descricao) {
         this.Id = Id;
         this.Descricao = Descricao;
     }
 
-    getId () {
+    getId() {
         return this.Id;
     }
-    getDescricao () {
+    getDescricao() {
         return this.Descricao;
     }
 
-    setId (Id) {
+    setId(Id) {
         this.Id = Id;
     }
 
-    setDescricao (Descricao) {
+    setDescricao(Descricao) {
         this.Descricao = Descricao;
     }
 

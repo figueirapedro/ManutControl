@@ -8,7 +8,7 @@ class Peca {
     dataEntrada;
     dataSaida;
 
-    constructor (id, descricao, quantidade, quantidadeMinima, custo, dataEntrada) {
+    constructor(id, descricao, quantidade, quantidadeMinima, custo, dataEntrada) {
         this.id = id;
         this.descricao = descricao;
         this.quantidade = quantidade;
@@ -17,53 +17,53 @@ class Peca {
         this.dataEntrada = dataEntrada;
     };
 
-    getId () {
-        return id;
+    getId() {
+        return this.id;
     }
-    getDescricao () {
-        return descricao;
+    getDescricao() {
+        return this.descricao;
     }
-    getQuantidade () {
-        return quantidade;
+    getQuantidade() {
+        return this.quantidade;
     }
-    getQuantidadeMinima () {
-        return quantidadeMinima;
+    getQuantidadeMinima() {
+        return this.quantidadeMinima;
     }
-    getCusto () {
-        return custo;
+    getCusto() {
+        return this.custo;
     }
-    getDataEntrada () {
-        return dataEntrada;
+    getDataEntrada() {
+        return this.dataEntrada;
     }
-    getDataSaida () {
-        return dataSaida;
+    getDataSaida() {
+        return this.dataSaida;
     }
 
-    setId(id){
+    setId(id) {
         this.id = id;
     }
 
-    setDescricao(descricao){
+    setDescricao(descricao) {
         this.descricao = descricao;
     }
 
-    setQuantidade(quantidade){
+    setQuantidade(quantidade) {
         this.quantidade = quantidade;
     }
 
-    setQuantidadeMinima(quantidadeMinima){
+    setQuantidadeMinima(quantidadeMinima) {
         this.quantidadeMinima = quantidadeMinima;
     }
 
-    setCusto(custo){
+    setCusto(custo) {
         this.custo = custo;
     }
 
-    setDataEntrada(dataEntrada){
+    setDataEntrada(dataEntrada) {
         this.dataEntrada = dataEntrada;
     }
 
-    setDataSaida(dataSaida){
+    setDataSaida(dataSaida) {
         this.dataSaida = dataSaida;
     }
 };

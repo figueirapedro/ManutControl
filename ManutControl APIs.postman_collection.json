@@ -898,6 +898,62 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "(LOCALHOST) Criptografar Senhas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "senha",
+									"value": "valor123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/login/criptografar",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login",
+								"criptografar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Autenticar Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

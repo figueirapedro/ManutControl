@@ -4,8 +4,9 @@ class Funcionario {
     Cargo;
     Disponibilidade;
     Data;
+    Senha;
 
-    constructor (   Id, Nome, Cargo, Disponibilidade, Data  ) {
+    constructor(Id, Nome, Cargo, Disponibilidade, Data) {
         this.Id = Id;
         this.Nome = Nome;
         this.Cargo = Cargo;
@@ -13,39 +14,39 @@ class Funcionario {
         this.Data = Data;
     }
 
-    getId () {
+    getId() {
         return this.Id;
     }
 
-    getNome () {
+    getNome() {
         return this.Nome;
     }
 
-    getCargo () {
+    getCargo() {
         return this.Cargo;
     }
 
-    getDisponibilidade () {
+    getDisponibilidade() {
         return this.Disponibilidade;
     }
 
-    getData () {
+    getData() {
         return this.Data;
     }
 
-    setId (Id) {
+    setId(Id) {
         this.Id = Id;
     }
-    setNome (Nome) {
+    setNome(Nome) {
         this.Nome = Nome;
     }
-    setCargo (Cargo) {
+    setCargo(Cargo) {
         this.Cargo = Cargo;
     }
-    setDisponibilidade (Disponibilidade) {
+    setDisponibilidade(Disponibilidade) {
         this.Disponibilidade = Disponibilidade;
     }
-    setData (Data) {
+    setData(Data) {
         this.Data = Data;
     }
 }
