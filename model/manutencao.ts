@@ -1,4 +1,5 @@
-class Manutencao {
+export class Manutencao {
+    
     Id;
     Descricao;
     Tipo;

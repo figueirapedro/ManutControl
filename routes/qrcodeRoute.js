@@ -1,0 +1,14 @@
+"use strict";
+var Express = require("express");
+var qrcodeController_1 = require("../controller/qrcodeController");
+var Router = Express.Router();
+Router.get("/qrcode/teste", qrcodeController_1.testeGoogle);
+Router.post("/qrcode/string", qrcodeController_1.toString);
+Router.post("/qrcode/dataurl", qrcodeController_1.toDataURL);
+Router.post("/qrcode/file", qrcodeController_1.toFile);
+Router.get("/qrcode/consulta", qrcodeController_1.consultaCodigo);
+Router.post("/qrcode", qrcodeController_1.inserirQrcode);
+Router.get("/qrcode", qrcodeController_1.listarQrcode);
+Router.put("/qrcode", qrcodeController_1.alterarQrcode);
+Router["delete"]("/qrcode", qrcodeController_1.removerQrcode);
+module.exports = Router;

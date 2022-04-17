@@ -1,4 +1,4 @@
-class Setor {
+export class Setor {
     Id;
     Nome;
 

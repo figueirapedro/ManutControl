@@ -1,4 +1,5 @@
-class Funcionario {
+export class Funcionario {
+    
     Id;
     Nome;
     Cargo;

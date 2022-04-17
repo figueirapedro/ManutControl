@@ -1,20 +1,13 @@
-class QRCode {
+export class QRCode {
     Id;
     Code;
     dataCriacao;
     dataAtualizacao;
 
-    constructor(Id, Code, dataCriacao, dataAtualizacao) {
+    constructor(Id, Code,) {
         this.Id = Id;
         this.Code = Code;
-        this.dataCriacao = dataCriacao;
-        this.dataAtualizacao = dataAtualizacao;
-    }
 
-    constructor(Id, Code, dataCriacao) {
-        this.Id = Id;
-        this.Code = Code;
-        this.dataCriacao = dataCriacao;
     }
 
     getId() {

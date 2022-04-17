@@ -1,4 +1,4 @@
-class Cargo {
+export class Cargo {
     Id;
     Descricao;
 
