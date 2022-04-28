@@ -1,3 +1,5 @@
+import * as Mongoose from "mongoose";
+
 export class Cargo {
     Id;
     Descricao;
@@ -23,3 +25,7 @@ export class Cargo {
     }
 
 }
+
+const CargoSchema = new Mongoose.Schema({ Cargo })
+
+export const Model = Mongoose.model("Cargo", CargoSchema);

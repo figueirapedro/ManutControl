@@ -2,7 +2,6 @@
 exports.__esModule = true;
 var Express = require("express");
 var App = Express();
-var equipamento_1 = require("./model/equipamento");
 var cargoRouter = require("./routes/cargoRoute");
 var funcionarioRouter = require("./routes/funcionarioRoute");
 var loginRouter = require("./routes/loginRoute");
@@ -24,5 +23,3 @@ App.use(qrcodeRouter);
 App.use(setorRouter);
 App.listen(3000);
 console.log("Executando...\n");
-var notebook = new equipamento_1.Equipamento("1", "1", "1", "1", "1", "1", "1", "1", "1");
-console.log(notebook);

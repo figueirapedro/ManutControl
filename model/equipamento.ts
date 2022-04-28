@@ -1,5 +1,6 @@
 import { Criticidade } from './criticidade';
 import { Peca } from "./peca";
+import * as Mongoose from "mongoose";
 
 export class Equipamento {
 
@@ -8,9 +9,9 @@ export class Equipamento {
     dataEntrada;
     Tag;
     Status;
-    Pecas:Peca;
+    Pecas: Peca;
     Local;
-    Criticidade:Criticidade;
+    Criticidade: Criticidade;
     QRCode;
 
     constructor(id, Descricao, dataEntrada, Tag, Status, Pecas, Local, Criticidade, QRCode) {
@@ -96,5 +97,7 @@ export class Equipamento {
     getCriticidade() {
         return this.Criticidade;
     }
-    
 }
+const EquipamentoSchema = new Mongoose.Schema({ Equipamento });
+
+export const Model = Mongoose.model("Cargo", EquipamentoSchema);

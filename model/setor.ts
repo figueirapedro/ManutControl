@@ -1,3 +1,5 @@
+import * as Mongoose from "mongoose";
+
 export class Setor {
     Id;
     Nome;
@@ -23,3 +25,7 @@ export class Setor {
     }
 
 }
+
+const SetorSchema = new Mongoose.Schema({ Setor })
+
+export const Model = Mongoose.model("Setor", SetorSchema);

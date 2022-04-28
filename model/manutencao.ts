@@ -1,5 +1,7 @@
+import * as Mongoose from "mongoose";
+
 export class Manutencao {
-    
+
     Id;
     Descricao;
     Tipo;
@@ -74,3 +76,7 @@ export class Manutencao {
         return this.QRCode;
     }
 }
+
+const ManutencaoSchema = new Mongoose.Schema({ Manutencao })
+
+export const Model = Mongoose.model("Manutencao", ManutencaoSchema);

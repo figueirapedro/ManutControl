@@ -1,3 +1,5 @@
+import * as Mongoose from "mongoose";
+
 export class Peca {
 
     Id;
@@ -66,4 +68,7 @@ export class Peca {
     setDataSaida(DataSaida) {
         this.DataSaida = DataSaida;
     }
-};
+}
+const PecaSchema = new Mongoose.Schema({ Peca })
+
+export const Model = Mongoose.model("Peca", PecaSchema);

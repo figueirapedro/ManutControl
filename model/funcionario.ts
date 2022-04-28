@@ -1,5 +1,7 @@
+import * as Mongoose from "mongoose";
+
 export class Funcionario {
-    
+
     Id;
     Nome;
     Cargo;
@@ -51,3 +53,7 @@ export class Funcionario {
         this.Data = Data;
     }
 }
+
+const FuncionarioSchema = new Mongoose.Schema({ Funcionario })
+
+export const Model = Mongoose.model("Cargo", FuncionarioSchema);
