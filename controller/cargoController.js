@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 exports.removerCargo = exports.alterarCargo = exports.listarCargo = exports.inserirCargo = void 0;
-var Cargo = require("../model/cargo");
+var cargo_1 = require("../model/cargo");
 // CRUD para Cargo
 function inserirCargo(req, res) {
     return __awaiter(this, void 0, void 0, function () {
@@ -45,7 +45,7 @@ function inserirCargo(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    cargos = new Cargo.Model(req.body);
+                    cargos = new cargo_1.Model(req.body);
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
@@ -70,7 +70,7 @@ function listarCargo(req, res) {
         var cargos;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, Cargo.Model.find({})];
+                case 0: return [4 /*yield*/, cargo_1.Model.find({})];
                 case 1:
                     cargos = _a.sent();
                     try {
@@ -93,10 +93,10 @@ function alterarCargo(req, res) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, Cargo.Model.findByIdAndUpdate(req.params.id, req.body)];
+                    return [4 /*yield*/, cargo_1.Model.findOneAndUpdate({ Id: req.params.id }, req.body)];
                 case 1:
                     cargos = _a.sent();
-                    return [4 /*yield*/, Cargo.Model.save()];
+                    return [4 /*yield*/, cargos.save()];
                 case 2:
                     _a.sent();
                     res.send(cargos);
@@ -119,7 +119,7 @@ function removerCargo(req, res) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, Cargo.Model.findByIdAndDelete(req.params.id)];
+                    return [4 /*yield*/, cargo_1.Model.findOneAndDelete({ Id: req.params.id })];
                 case 1:
                     cargos = _a.sent();
                     if (!cargos)

@@ -1,27 +1,47 @@
-import * as Filesystem from "fs";
+import { Model } from "../model/equipamento";
 
 // CRUD para Equipamento
 
-export function inserirEquipamento(req, res) {
-    res.send("equipamento cadastrado com sucesso!\n" + JSON.stringify(req.body))
+export async function inserirEquipamento(req, res) {
+    const equipamentos = new Model(req.body);
+
+    try {
+        await equipamentos.save();
+        res.send(equipamentos);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function listarEquipamento(req, res) {
-    Filesystem.readFile(__dirname + '/assets/mock/equipamento.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        res.send(data)
-    })
+export async function listarEquipamento(req, res) {
+    const equipamentos = await Model.find({});
+
+    try {
+        res.send(equipamentos);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function alterarEquipamento(req, res) {
-    res.send("Equipamento de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
+export async function alterarEquipamento(req, res) {
+    try {
+        const equipamentos = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        await equipamentos.save();
+        res.send(equipamentos);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function removerEquipamento(req, res) {
-    res.send("Equipamento de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
-};
+export async function removerEquipamento(req, res) {
+    try {
+        const equipamentos = await Model.findOneAndDelete({ Id: req.params.id });
+
+        if (!equipamentos) res.status(404).send("No item found");
+        res.status(200).send();
+    } catch (error) {
+        res.status(500).send(error);
+    }
+}
 
   // Fim CRUD de Equipamento

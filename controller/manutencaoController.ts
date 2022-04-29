@@ -1,22 +1,43 @@
-import * as Filesystem from "fs";
+import { Model } from "../model/manutencao";
 
-export function listarManutencao(req, res) {
-    res.send("Manutenção cadastrada com sucesso!\n" + JSON.stringify(req.body))
+export async function listarManutencao(req, res) {
+    const manutencao = await Model.find({});
+
+    try {
+        res.send(manutencao);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
-export function inserirManutencao(req, res) {
-    Filesystem.readFile("../assets/mock/manutencao.json", "utf8", (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        res.send(data)
-    })
+export async function inserirManutencao(req, res) {
+
+    const manutencao = new Model(req.body);
+
+    try {
+        await manutencao.save();
+        res.send(manutencao);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function alterarManutencao(req, res) {
-    res.send("Manutenção de ID " + req.body.Id + " foi alterada com sucesso!\n" + JSON.stringify(req.body))
+export async function alterarManutencao(req, res) {
+    try {
+        const manutencao = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        await manutencao.save();
+        res.send(manutencao);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function removerManutencao(req, res) {
-    res.send("Manutenção de ID " + req.body.Id + " foi removida com sucesso!\n" + JSON.stringify(req.body))
+export async function removerManutencao(req, res) {
+    try {
+        const manutencao = await Model.findOneAndDelete({ Id: req.params.id });
+
+        if (!manutencao) res.status(404).send("No item found");
+        res.status(200).send();
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };

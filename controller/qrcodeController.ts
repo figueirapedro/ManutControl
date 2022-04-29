@@ -1,5 +1,6 @@
-import * as Filesystem from "fs";
 import * as QRCode from "qrcode";
+import { Model } from "../model/qrcode";
+
 
 // Criar um QR Code aleatório para teste, direcionando para o Google
 
@@ -43,26 +44,47 @@ export function consultaCodigo(req, res) {
 
 // CRUD para QRCode
 
-export function listarQrcode(req, res) {
-  res.send("QRCode cadastrado com sucesso!\n" + JSON.stringify(req.body))
+export async function listarQrcode(req, res) {
+  const qrcodes = await Model.find({});
+
+  try {
+    res.send(qrcodes);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 }
 
-export function inserirQrcode(req, res) {
-  Filesystem.readFile("../assets/mock/qrcode.json", "utf8", (err, data) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    res.send(data)
-  })
+export async function inserirQrcode(req, res) {
+  const qrcodes = new Model(req.body);
+
+  try {
+    await qrcodes.save();
+    res.send(qrcodes);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 }
 
-export function alterarQrcode(req, res) {
-  res.send("QRCode de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
+export async function alterarQrcode(req, res) {
+  try {
+    const qrcodes = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+    
+    await qrcodes.save();
+    res.send(qrcodes);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 }
 
-export function removerQrcode(req, res) {
-  res.send("QRCode de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
+export async function removerQrcode(req, res) {
+  try {
+    const qrcodes = await Model.findOneAndDelete({ Id: req.params.id });
+
+    if (!qrcodes) res.status(404).send("No item found");
+    res.status(200).send();
+  } catch (error) {
+    res.status(500).send(error);
+  }
 }
 
   // Fim CRUD de QRCode

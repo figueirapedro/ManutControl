@@ -1,16 +1,10 @@
 "use strict";
 exports.__esModule = true;
-exports.Peca = void 0;
+exports.Model = exports.Peca = void 0;
+var Mongoose = require("mongoose");
 var Peca = /** @class */ (function () {
-    function Peca(Id, Descricao, Quantidade, QuantidadeMinima, Custo, DataEntrada) {
-        this.Id = Id;
-        this.Descricao = Descricao;
-        this.Quantidade = Quantidade;
-        this.QuantidadeMinima = QuantidadeMinima;
-        this.Custo = Custo;
-        this.DataEntrada = DataEntrada;
+    function Peca() {
     }
-    ;
     Peca.prototype.getId = function () {
         return this.Id;
     };
@@ -56,4 +50,13 @@ var Peca = /** @class */ (function () {
     return Peca;
 }());
 exports.Peca = Peca;
-;
+var PecaSchema = new Mongoose.Schema({
+    Id: Number,
+    Descricao: String,
+    Quantidade: Number,
+    QuantidadeMinima: Number,
+    Custo: String,
+    DataEntrada: Date,
+    DataSaida: Date
+});
+exports.Model = Mongoose.model("Peca", PecaSchema);

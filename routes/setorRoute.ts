@@ -4,7 +4,7 @@ import { inserirSetor, listarSetor, alterarSetor, removerSetor } from "../contro
 
 Router.get("/setor", listarSetor);
 Router.post("/setor", inserirSetor);
-Router.put("/setor", alterarSetor);
-Router.delete("/setor", removerSetor);
+Router.put("/setor/:id", alterarSetor);
+Router.delete("/setor/:id", removerSetor);
 
 export = Router;

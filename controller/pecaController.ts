@@ -1,22 +1,40 @@
-import * as Filesystem from "fs";
+import { Model } from "../model/peca";
 
-export function listarPeca(req, res) {
-    res.send("Peça cadastrada com sucesso!\n" + JSON.stringify(req.body))
+export async function listarPeca(req, res) {
+    const pecas = await Model.find({});
+
+    try {
+        res.send(pecas);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
-export function inserirPeca(req, res) {
-    Filesystem.readFile('../assets/mock/peca.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        res.send(data)
-    })
+export async function inserirPeca(req, res) {
+    const pecas = new Model(req.body);
+
+    try {
+        await pecas.save();
+        res.send(pecas);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function alterarPeca(req, res) {
-    res.send("Peça de ID " + req.body.Id + " foi alterada com sucesso!\n" + JSON.stringify(req.body))
-};
+export async function alterarPeca(req, res) {
+    try {
+        const pecas = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        await pecas.save();
+        res.send(pecas);
+    } catch (error) {
+        res.status(500).send(error);
+    }};
 
-export function removerPeca(req, res) {
-    res.send("Peça de ID " + req.body.Id + " foi removida com sucesso!\n" + JSON.stringify(req.body))
-};
+export async function removerPeca(req, res) {
+    try {
+        const pecas = await Model.findOneAndDelete({ Id: req.params.id });
+
+        if (!pecas) res.status(404).send("No item found");
+        res.status(200).send();
+    } catch (error) {
+        res.status(500).send(error);
+    }};

@@ -1,33 +1,23 @@
+import { QRCode } from './qrcode';
 import { Criticidade } from './criticidade';
+import { Status } from './status';
 import { Peca } from "./peca";
 import * as Mongoose from "mongoose";
 
 export class Equipamento {
 
-    id;
-    Descricao;
-    dataEntrada;
-    Tag;
-    Status;
+    Id: Number;
+    Descricao: String;
+    dataEntrada: Date;
+    Tag: String;
+    Status: Status;
     Pecas: Peca;
-    Local;
+    Local: String;
     Criticidade: Criticidade;
-    QRCode;
-
-    constructor(id, Descricao, dataEntrada, Tag, Status, Pecas, Local, Criticidade, QRCode) {
-        this.id = id;
-        this.Descricao = Descricao;
-        this.dataEntrada = dataEntrada;
-        this.Tag = Tag;
-        this.Status = Status;
-        this.Pecas = Pecas;
-        this.Local = Local;
-        this.Criticidade = Criticidade;
-        this.QRCode = QRCode;
-    }
+    QRCode: QRCode;
 
     setId(id) {
-        this.id = id;
+        this.Id = id;
     }
 
     setDescricao(Descricao) {
@@ -67,7 +57,7 @@ export class Equipamento {
     }
 
     getId() {
-        return this.id;
+        return this.Id;
     }
 
     getDescricao() {
@@ -98,6 +88,17 @@ export class Equipamento {
         return this.Criticidade;
     }
 }
-const EquipamentoSchema = new Mongoose.Schema({ Equipamento });
 
-export const Model = Mongoose.model("Cargo", EquipamentoSchema);
+const EquipamentoSchema = new Mongoose.Schema({
+    Id: Number,
+    Descricao: String,
+    dataEntrada: Date,
+    Tag: String,
+    Status: String,
+    Pecas: String,
+    Local: String,
+    Criticidade: String,
+    QRCode: String,
+});
+
+export const Model = Mongoose.model("Equipamento", EquipamentoSchema);

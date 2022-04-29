@@ -4,7 +4,7 @@ import { inserirFuncionario, listarFuncionario, alterarFuncionario, removerFunci
 
 Router.get("/funcionario", listarFuncionario);
 Router.post("/funcionario", inserirFuncionario);
-Router.put("/funcionario", alterarFuncionario);
-Router.delete("/funcionario", removerFuncionario);
+Router.put("/funcionario/:id", alterarFuncionario);
+Router.delete("/funcionario/:id", removerFuncionario);
 
 export = Router;

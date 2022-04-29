@@ -1,27 +1,47 @@
-import * as Filesystem from "fs";
+import { Model } from "../model/setor";
 
 // CRUD para Setor
 
-export function inserirSetor(req, res) {
-    res.send("Setor cadastrado com sucesso!\n" + JSON.stringify(req.body))
+export async function inserirSetor(req, res) {
+    const setor = new Model(req.body);
+
+    try {
+        await setor.save();
+        res.send(setor);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function listarSetor(req, res) {
-    Filesystem.readFile("../assets/mock/setor.json", "utf8", (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        res.send(data)
-    })
+export async function listarSetor(req, res) {
+    const setor = await Model.find({});
+
+    try {
+        res.send(setor);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function alterarSetor(req, res) {
-    res.send("Setor de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
+export async function alterarSetor(req, res) {
+    try {
+        const setor = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        await setor.save();
+        res.send(setor);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function removerSetor(req, res) {
-    res.send("Setor de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
+export async function removerSetor(req, res) {
+    try {
+        const setor = await Model.findOneAndDelete({ Id: req.params.id });
+
+        if (!setor) res.status(404).send("No item found");
+        res.status(200).send();
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
   // Fim CRUD de Setor

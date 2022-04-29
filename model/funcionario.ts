@@ -1,21 +1,15 @@
 import * as Mongoose from "mongoose";
+import { Cargo } from "./cargo";
 
 export class Funcionario {
 
-    Id;
-    Nome;
-    Cargo;
-    Disponibilidade;
-    Data;
-    Senha;
-
-    constructor(Id, Nome, Cargo, Disponibilidade, Data) {
-        this.Id = Id;
-        this.Nome = Nome;
-        this.Cargo = Cargo;
-        this.Disponibilidade = Disponibilidade;
-        this.Data = Data;
-    }
+    Id: Number;
+    CPF: Number;
+    Nome: String;
+    Cargo: Cargo;
+    Disponibilidade: String;
+    Data: Date;
+    Senha: String;
 
     getId() {
         return this.Id;
@@ -37,6 +31,14 @@ export class Funcionario {
         return this.Data;
     }
 
+    getCPF() {
+        return this.CPF;
+    }
+
+    setCPF(CPF) {
+        this.CPF = CPF;
+    }
+
     setId(Id) {
         this.Id = Id;
     }
@@ -54,6 +56,14 @@ export class Funcionario {
     }
 }
 
-const FuncionarioSchema = new Mongoose.Schema({ Funcionario })
+const FuncionarioSchema = new Mongoose.Schema({
+    Id: Number,
+    CPF: Number,
+    Nome: String,
+    Cargo: String,
+    Disponibilidade: String,
+    Data: Date,
+    Senha: String,
+})
 
-export const Model = Mongoose.model("Cargo", FuncionarioSchema);
+export const Model = Mongoose.model("Funcionario", FuncionarioSchema);

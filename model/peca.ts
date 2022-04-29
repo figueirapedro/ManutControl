@@ -2,22 +2,13 @@ import * as Mongoose from "mongoose";
 
 export class Peca {
 
-    Id;
-    Descricao;
-    Quantidade;
-    QuantidadeMinima;
-    Custo;
-    DataEntrada;
-    DataSaida;
-
-    constructor(Id, Descricao, Quantidade, QuantidadeMinima, Custo, DataEntrada) {
-        this.Id = Id;
-        this.Descricao = Descricao;
-        this.Quantidade = Quantidade;
-        this.QuantidadeMinima = QuantidadeMinima;
-        this.Custo = Custo;
-        this.DataEntrada = DataEntrada;
-    };
+    Id: Number;
+    Descricao: String;
+    Quantidade: Number;
+    QuantidadeMinima: Number;
+    Custo: String;
+    DataEntrada: Date;
+    DataSaida: Date;
 
     getId() {
         return this.Id;
@@ -69,6 +60,15 @@ export class Peca {
         this.DataSaida = DataSaida;
     }
 }
-const PecaSchema = new Mongoose.Schema({ Peca })
+
+const PecaSchema = new Mongoose.Schema({
+    Id: Number,
+    Descricao: String,
+    Quantidade: Number,
+    QuantidadeMinima: Number,
+    Custo: String,
+    DataEntrada: Date,
+    DataSaida: Date,
+})
 
 export const Model = Mongoose.model("Peca", PecaSchema);

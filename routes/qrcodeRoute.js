@@ -9,6 +9,6 @@ Router.post("/qrcode/file", qrcodeController_1.toFile);
 Router.get("/qrcode/consulta", qrcodeController_1.consultaCodigo);
 Router.post("/qrcode", qrcodeController_1.inserirQrcode);
 Router.get("/qrcode", qrcodeController_1.listarQrcode);
-Router.put("/qrcode", qrcodeController_1.alterarQrcode);
-Router["delete"]("/qrcode", qrcodeController_1.removerQrcode);
+Router.put("/qrcode/:id", qrcodeController_1.alterarQrcode);
+Router["delete"]("/qrcode/:id", qrcodeController_1.removerQrcode);
 module.exports = Router;

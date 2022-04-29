@@ -1,22 +1,44 @@
-import * as Filesystem from "fs";
+import { Model } from "../model/funcionario";
 
-export function listarFuncionario(req, res) {
-    res.send("Funcionario cadastrado com sucesso!\n" + JSON.stringify(req.body))
+export async function listarFuncionario(req, res) {
+    const funcionarios = await Model.find({});
+
+    try {
+        res.send(funcionarios);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
-export function inserirFuncionario(req, res) {
-    Filesystem.readFile('../assets/mock/funcionario.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        res.send(data)
-    })
+export async function inserirFuncionario(req, res) {
+
+    const funcionarios = new Model(req.body);
+
+    try {
+        await funcionarios.save();
+        res.send(funcionarios);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function alterarFuncionario(req, res) {
-    res.send("Funcionario de ID " + req.body.Id + " foi alterado com sucesso!\n" + JSON.stringify(req.body))
+export async function alterarFuncionario(req, res) {
+    try {
+        const funcionarios = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+
+        await funcionarios.save();
+        res.send(funcionarios);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };
 
-export function removerFuncionario(req, res) {
-    res.send("Funcionario de ID " + req.body.Id + " foi removido com sucesso!\n" + JSON.stringify(req.body))
+export async function removerFuncionario(req, res) {
+    try {
+        const funcionarios = await Model.findOneAndDelete({ Id: req.params.id });
+
+        if (!funcionarios) res.status(404).send("No item found");
+        res.status(200).send();
+    } catch (error) {
+        res.status(500).send(error);
+    }
 };

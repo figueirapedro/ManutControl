@@ -4,7 +4,7 @@ import { inserirCargo, listarCargo, alterarCargo, removerCargo }  from "../contr
 
 Router.get("/cargo", listarCargo);
 Router.post("/cargo", inserirCargo);
-Router.put("/cargo", alterarCargo);
-Router.delete("/cargo", removerCargo);
+Router.put("/cargo/:id", alterarCargo);
+Router.delete("/cargo/:id", removerCargo);
 
 export = Router;

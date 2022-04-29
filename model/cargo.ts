@@ -1,8 +1,8 @@
 import * as Mongoose from "mongoose";
 
 export class Cargo {
-    Id;
-    Descricao;
+    Id: String;
+    Descricao: String;
 
     constructor(Id, Descricao) {
         this.Id = Id;
@@ -26,6 +26,9 @@ export class Cargo {
 
 }
 
-const CargoSchema = new Mongoose.Schema({ Cargo })
+const CargoSchema = new Mongoose.Schema({
+    Id: String,
+    Descricao: String,
+})
 
 export const Model = Mongoose.model("Cargo", CargoSchema);

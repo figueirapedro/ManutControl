@@ -6,26 +6,23 @@
 	},
 	"item": [
 		{
-			"name": "Manutenção",
-			"item": [
-				{
-					"name": "localhost:3000/manutencao",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Peças",
 			"item": [
 				{
 					"name": "(LOCALHOST) Get Peça",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/peca",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"peca"
+							]
+						}
 					},
 					"response": []
 				},
@@ -38,13 +35,13 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
+									"key": "Id",
+									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
@@ -71,25 +68,21 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "TESTE",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/peca/123",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"peca",
+								"123"
 							]
 						}
 					},
@@ -100,29 +93,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
-						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/peca/123",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"peca",
+								"123"
 							]
 						}
 					},
@@ -137,7 +116,17 @@
 					"name": "(LOCALHOST) Get Cargo",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/cargo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cargo"
+							]
+						}
 					},
 					"response": []
 				},
@@ -150,25 +139,25 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
+									"key": "Id",
+									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/cargo",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"cargo"
 							]
 						}
 					},
@@ -183,25 +172,21 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/cargo/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"cargo",
+								"1"
 							]
 						}
 					},
@@ -212,29 +197,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
-						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/cargo/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"cargo",
+								"1"
 							]
 						}
 					},
@@ -249,7 +220,17 @@
 					"name": "(LOCALHOST) Get Equipamento",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/equipamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"equipamento"
+							]
+						}
 					},
 					"response": []
 				},
@@ -262,25 +243,25 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
+									"key": "Id",
+									"value": "2",
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/equipamento",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"equipamento"
 							]
 						}
 					},
@@ -295,25 +276,21 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "TESTE",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/equipamento/2",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"equipamento",
+								"2"
 							]
 						}
 					},
@@ -324,29 +301,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
-						},
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/equipamento/2",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"equipamento"
+								"equipamento",
+								"2"
 							]
 						}
 					},
@@ -361,7 +324,17 @@
 					"name": "(LOCALHOST) Get Funcionario",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/funcionario",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionario"
+							]
+						}
 					},
 					"response": []
 				},
@@ -374,25 +347,25 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
+									"key": "Id",
+									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Nome",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/funcionario",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"funcionario"
 							]
 						}
 					},
@@ -407,25 +380,21 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Nome",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/funcionario/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"funcionario",
+								"1"
 							]
 						}
 					},
@@ -438,27 +407,17 @@
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
+							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/funcionario/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"equipamento"
+								"funcionario",
+								"1"
 							]
 						}
 					},
@@ -473,7 +432,18 @@
 					"name": "(LOCALHOST) Get QRCode",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/qrcode/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"qrcode",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -490,7 +460,7 @@
 							"urlencoded": [
 								{
 									"key": "codigo",
-									"value": "",
+									"value": "iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAALLSURBVO3BQY7DVgwFwX6E7n/lziy5+oAg2YkZVsU/rDGKNUqxRinWKMUapVijFGuUYo1SrFGKNUqxRinWKMUapVijFGuUYo1y8VASvknliSR0KidJ+CaVJ4o1SrFGKdYoFy9TeVMSTpJwonKShE7lROVNSXhTsUYp1ijFGuXiw5Jwh8odKl0STlS6JDyRhDtUPqlYoxRrlGKNcvE/pzJJsUYp1ijFGuXixyWhU+mS0Kl0SehUflmxRinWKMUa5eLDVD5J5d+k8l9SrFGKNUqxRrl4WRK+KQmdyicl4b+sWKMUa5RijRL/MEgSOpUuCScqv6xYoxRrlGKNcvFQEjqVLgmdSpeETqVLQqdyotIl4UTliSR0KidJ6FTeVKxRijVKsUaJf3hREp5QeVMSOpU7ktCpnCShUzlJQqfyRLFGKdYoxRrl4qEkPKHSJeGbktCpdConSThJwonKm4o1SrFGKdYo8Q8PJOFEpUvCicodSThReSIJncpJEp5QeaJYoxRrlGKNcvFhSehUuiR0SXhCpUtCp9IloVO5IwknKl0SPqlYoxRrlGKNEv/ww5LwhEqXhE6lS0KncpKEE5U3FWuUYo1SrFEuHkrCN6l0Kl0SOpUuCXck4U0qn1SsUYo1SrFGuXiZypuS8EQSTpJwotIloUtCp9KpdEk4UXmiWKMUa5RijXLxYUm4Q+WOJHQqJ0noVLokdEk4UblDpUvCm4o1SrFGKdYoFz9OpUvCicqJSpeEJ5JwovKmYo1SrFGKNcrFj0tCp3JHEjqVTuUkCScqJ0noVJ4o1ijFGqVYo1x8mMonqZwkoVPpVE6ScKLSJeEOlTcVa5RijVKsUS5eloRvSkKn0qmcJKFTOVHpknCShE6lS0Kn8kSxRinWKMUaJf5hjVGsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5R/AGjcHfP02NykAAAAAElFTkSuQmCC",
 									"type": "default"
 								}
 							]
@@ -530,13 +500,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/qrcode",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"qrcode"
 							]
 						}
 					},
@@ -551,7 +521,7 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
+									"key": "Id",
 									"value": "wadawdawd",
 									"type": "default"
 								},
@@ -563,13 +533,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/qrcode",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"qrcode"
 							]
 						}
 					},
@@ -589,20 +559,20 @@
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
+									"key": "Id",
 									"value": "adwdddddddddd",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/qrcode",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"equipamento"
+								"qrcode"
 							]
 						}
 					},
@@ -612,7 +582,18 @@
 					"name": "(LOCALHOST) QRCode Teste Google",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/qrcode/teste",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"qrcode",
+								"teste"
+							]
+						}
 					},
 					"response": []
 				},
@@ -621,6 +602,16 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "texto",
+									"value": "youtube.com",
+									"type": "default"
+								}
+							]
+						},
 						"url": {
 							"raw": "localhost:3000/qrcode/string",
 							"host": [
@@ -630,6 +621,13 @@
 							"path": [
 								"qrcode",
 								"string"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -640,15 +638,25 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "texto",
+									"value": "1111111111",
+									"type": "default"
+								}
+							]
+						},
 						"url": {
-							"raw": "localhost:3000/qrcode/string",
+							"raw": "localhost:3000/qrcode/dataurl",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"qrcode",
-								"string"
+								"dataurl"
 							]
 						}
 					},
@@ -659,15 +667,30 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "local",
+									"value": "awd",
+									"type": "default"
+								},
+								{
+									"key": "texto",
+									"value": "d",
+									"type": "default"
+								}
+							]
+						},
 						"url": {
-							"raw": "localhost:3000/qrcode/string",
+							"raw": "localhost:3000/qrcode/file",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"qrcode",
-								"string"
+								"file"
 							]
 						}
 					},
@@ -682,7 +705,17 @@
 					"name": "(LOCALHOST) Get Setor",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/setor",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"setor"
+							]
+						}
 					},
 					"response": []
 				},
@@ -695,25 +728,25 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
+									"key": "Id",
+									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Nome",
+									"value": "Produção X",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/setor",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"setor"
 							]
 						}
 					},
@@ -728,25 +761,21 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Nome",
+									"value": "Produção Tste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/setor/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"setor",
+								"1"
 							]
 						}
 					},
@@ -757,29 +786,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
-						},
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/setor/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"equipamento"
+								"setor",
+								"1"
 							]
 						}
 					},
@@ -794,7 +809,17 @@
 					"name": "(LOCALHOST) Get Manutenção",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/manutencao",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"manutencao"
+							]
+						}
 					},
 					"response": []
 				},
@@ -807,25 +832,25 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
+									"key": "Id",
+									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "TESTE",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/manutencao",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"manutencao"
 							]
 						}
 					},
@@ -840,25 +865,21 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
+									"key": "Descricao",
+									"value": "Teste",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/manutencao/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"peca"
+								"manutencao",
+								"1"
 							]
 						}
 					},
@@ -871,27 +892,17 @@
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
+							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/manutencao/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"equipamento"
+								"manutencao",
+								"1"
 							]
 						}
 					},
@@ -912,7 +923,12 @@
 							"urlencoded": [
 								{
 									"key": "senha",
-									"value": "valor123",
+									"value": "aaa",
+									"type": "default"
+								},
+								{
+									"key": "login",
+									"value": "abc",
 									"type": "default"
 								}
 							]
@@ -932,13 +948,59 @@
 					"response": []
 				},
 				{
+					"name": "(LOCALHOST) Descriptografar Senhas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "senha",
+									"value": "U2FsdGVkX195NiPkKbGu3pK0ene2n7Ny3Kqg7OnXODE=",
+									"type": "default"
+								},
+								{
+									"key": "login",
+									"value": "abc",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/login/descriptografar",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login",
+								"descriptografar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "(LOCALHOST) Autenticar Login",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
-							"urlencoded": []
+							"urlencoded": [
+								{
+									"key": "login",
+									"value": "abc",
+									"type": "default"
+								},
+								{
+									"key": "senha",
+									"value": "123",
+									"type": "default"
+								}
+							]
 						},
 						"url": {
 							"raw": "localhost:3000/login",

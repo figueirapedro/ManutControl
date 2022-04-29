@@ -1,6 +1,9 @@
 "use strict";
 exports.__esModule = true;
 var Express = require("express");
+var Mongoose = require("mongoose");
+var dotenv = require("dotenv");
+dotenv.config();
 var App = Express();
 var cargoRouter = require("./routes/cargoRoute");
 var funcionarioRouter = require("./routes/funcionarioRoute");
@@ -10,6 +13,7 @@ var manutencaoRouter = require("./routes/manutencaoRoute");
 var pecaRouter = require("./routes/pecaRoute");
 var qrcodeRouter = require("./routes/qrcodeRoute");
 var setorRouter = require("./routes/setorRoute");
+Mongoose.connect(process.env.LOCAL_DB_CONN_STRING);
 App.use(Express.json());
 App.use(Express.urlencoded({ extended: true }));
 App.use(Express.static(__dirname));

@@ -22,5 +22,8 @@ var Cargo = /** @class */ (function () {
     return Cargo;
 }());
 exports.Cargo = Cargo;
-var CargoSchema = new Mongoose.Schema({ Cargo: Cargo });
+var CargoSchema = new Mongoose.Schema({
+    Id: String,
+    Descricao: String
+});
 exports.Model = Mongoose.model("Cargo", CargoSchema);

@@ -4,7 +4,7 @@ import { inserirEquipamento, listarEquipamento, alterarEquipamento, removerEquip
 
 Router.post("/equipamento",inserirEquipamento );
 Router.get("/equipamento", listarEquipamento);
-Router.put("/equipamento", alterarEquipamento);
-Router.delete("/equipamento", removerEquipamento);
+Router.put("/equipamento/:id", alterarEquipamento);
+Router.delete("/equipamento/:id", removerEquipamento);
 
 export = Router;

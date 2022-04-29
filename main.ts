@@ -1,4 +1,9 @@
 import * as Express from "express";
+import * as Mongoose from "mongoose";
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
 const App = Express();
 
 import * as cargoRouter from "./routes/cargoRoute";
@@ -9,6 +14,10 @@ import * as manutencaoRouter from "./routes/manutencaoRoute";
 import * as pecaRouter from "./routes/pecaRoute";
 import * as qrcodeRouter from "./routes/qrcodeRoute";
 import * as setorRouter from "./routes/setorRoute";
+
+Mongoose.connect(
+    process.env.LOCAL_DB_CONN_STRING,
+);
 
 App.use(Express.json());
 App.use(Express.urlencoded({ extended: true }))

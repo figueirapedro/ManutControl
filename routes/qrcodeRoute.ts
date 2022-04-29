@@ -9,7 +9,7 @@ Router.post("/qrcode/file", toFile);
 Router.get("/qrcode/consulta", consultaCodigo);
 Router.post("/qrcode", inserirQrcode);
 Router.get("/qrcode", listarQrcode);
-Router.put("/qrcode", alterarQrcode);
-Router.delete("/qrcode", removerQrcode);
+Router.put("/qrcode/:id", alterarQrcode);
+Router.delete("/qrcode/:id", removerQrcode);
 
 export = Router;

@@ -1,20 +1,12 @@
 "use strict";
 exports.__esModule = true;
-exports.Equipamento = void 0;
+exports.Model = exports.Equipamento = void 0;
+var Mongoose = require("mongoose");
 var Equipamento = /** @class */ (function () {
-    function Equipamento(id, Descricao, dataEntrada, Tag, Status, Pecas, Local, Criticidade, QRCode) {
-        this.id = id;
-        this.Descricao = Descricao;
-        this.dataEntrada = dataEntrada;
-        this.Tag = Tag;
-        this.Status = Status;
-        this.Pecas = Pecas;
-        this.Local = Local;
-        this.Criticidade = Criticidade;
-        this.QRCode = QRCode;
+    function Equipamento() {
     }
     Equipamento.prototype.setId = function (id) {
-        this.id = id;
+        this.Id = id;
     };
     Equipamento.prototype.setDescricao = function (Descricao) {
         this.Descricao = Descricao;
@@ -44,7 +36,7 @@ var Equipamento = /** @class */ (function () {
         return this.QRCode;
     };
     Equipamento.prototype.getId = function () {
-        return this.id;
+        return this.Id;
     };
     Equipamento.prototype.getDescricao = function () {
         return this.Descricao;
@@ -70,3 +62,15 @@ var Equipamento = /** @class */ (function () {
     return Equipamento;
 }());
 exports.Equipamento = Equipamento;
+var EquipamentoSchema = new Mongoose.Schema({
+    Id: Number,
+    Descricao: String,
+    dataEntrada: Date,
+    Tag: String,
+    Status: String,
+    Pecas: String,
+    Local: String,
+    Criticidade: String,
+    QRCode: String
+});
+exports.Model = Mongoose.model("Equipamento", EquipamentoSchema);

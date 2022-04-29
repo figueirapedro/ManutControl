@@ -1,8 +1,8 @@
 import * as Mongoose from "mongoose";
 
 export class Setor {
-    Id;
-    Nome;
+    Id:Number;
+    Nome:String;
 
     constructor(Id, Nome) {
         this.Id = Id;
@@ -26,6 +26,9 @@ export class Setor {
 
 }
 
-const SetorSchema = new Mongoose.Schema({ Setor })
+const SetorSchema = new Mongoose.Schema({ 
+    Id:Number,
+    Nome:String,
+ })
 
 export const Model = Mongoose.model("Setor", SetorSchema);
