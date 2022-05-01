@@ -36,8 +36,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.removerFuncionario = exports.alterarFuncionario = exports.inserirFuncionario = exports.listarFuncionario = void 0;
+exports.buscaFuncionarioPorCPF = exports.buscaFuncionarioPorEmail = exports.removerFuncionario = exports.alterarFuncionario = exports.inserirFuncionario = exports.listarFuncionario = void 0;
 var funcionario_1 = require("../model/funcionario");
+var loginController_1 = require("./loginController");
 function listarFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var funcionarios;
@@ -61,14 +62,57 @@ exports.listarFuncionario = listarFuncionario;
 ;
 function inserirFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
+        var funcionarios, _a, Error_1;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    funcionarios = new funcionario_1.Model(req.body);
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 6, , 7]);
+                    if (typeof funcionarios.CPF != "undefined" && !(0, funcionario_1.validarCPF)(funcionarios.CPF))
+                        throw Error("CPF Inválido!");
+                    return [4 /*yield*/, buscaFuncionarioPorCPF(funcionarios.CPF)];
+                case 2:
+                    _a = (_b.sent());
+                    if (_a) return [3 /*break*/, 4];
+                    return [4 /*yield*/, buscaFuncionarioPorEmail(funcionarios.Email)];
+                case 3:
+                    _a = (_b.sent());
+                    _b.label = 4;
+                case 4:
+                    if (_a)
+                        throw Error("Funcionario já cadastrado!");
+                    funcionarios.CPF = (0, loginController_1.hashearTexto)(funcionarios.CPF);
+                    funcionarios.Senha = (0, loginController_1.hashearTexto)(funcionarios.Senha);
+                    return [4 /*yield*/, funcionarios.save()];
+                case 5:
+                    _b.sent();
+                    res.send(funcionarios);
+                    return [3 /*break*/, 7];
+                case 6:
+                    Error_1 = _b.sent();
+                    res.status(500).send(Error_1);
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.inserirFuncionario = inserirFuncionario;
+;
+function alterarFuncionario(req, res) {
+    return __awaiter(this, void 0, void 0, function () {
         var funcionarios, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    funcionarios = new funcionario_1.Model(req.body);
-                    _a.label = 1;
+                    _a.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, funcionario_1.Model.findByIdAndUpdate(req.params.id, req.body)];
                 case 1:
-                    _a.trys.push([1, 3, , 4]);
+                    funcionarios = _a.sent();
+                    if (typeof funcionarios.CPF == "undefined" && !(0, funcionario_1.validarCPF)(funcionarios.CPF))
+                        throw new Error("CPF Inválido!");
                     return [4 /*yield*/, funcionarios.save()];
                 case 2:
                     _a.sent();
@@ -83,37 +127,11 @@ function inserirFuncionario(req, res) {
         });
     });
 }
-exports.inserirFuncionario = inserirFuncionario;
-;
-function alterarFuncionario(req, res) {
-    return __awaiter(this, void 0, void 0, function () {
-        var funcionarios, error_2;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, funcionario_1.Model.findByIdAndUpdate(req.params.id, req.body)];
-                case 1:
-                    funcionarios = _a.sent();
-                    return [4 /*yield*/, funcionarios.save()];
-                case 2:
-                    _a.sent();
-                    res.send(funcionarios);
-                    return [3 /*break*/, 4];
-                case 3:
-                    error_2 = _a.sent();
-                    res.status(500).send(error_2);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
-            }
-        });
-    });
-}
 exports.alterarFuncionario = alterarFuncionario;
 ;
 function removerFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var funcionarios, error_3;
+        var funcionarios, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -126,8 +144,8 @@ function removerFuncionario(req, res) {
                     res.status(200).send();
                     return [3 /*break*/, 3];
                 case 2:
-                    error_3 = _a.sent();
-                    res.status(500).send(error_3);
+                    error_2 = _a.sent();
+                    res.status(500).send(error_2);
                     return [3 /*break*/, 3];
                 case 3: return [2 /*return*/];
             }
@@ -135,4 +153,34 @@ function removerFuncionario(req, res) {
     });
 }
 exports.removerFuncionario = removerFuncionario;
+;
+function buscaFuncionarioPorEmail(email) {
+    return __awaiter(this, void 0, void 0, function () {
+        var funcionario;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, funcionario_1.Model.find({ Email: email })];
+                case 1:
+                    funcionario = _a.sent();
+                    return [2 /*return*/, funcionario[0]];
+            }
+        });
+    });
+}
+exports.buscaFuncionarioPorEmail = buscaFuncionarioPorEmail;
+;
+function buscaFuncionarioPorCPF(cpf) {
+    return __awaiter(this, void 0, void 0, function () {
+        var funcionario;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, funcionario_1.Model.find({ CPF: cpf })];
+                case 1:
+                    funcionario = _a.sent();
+                    return [2 /*return*/, funcionario[0]];
+            }
+        });
+    });
+}
+exports.buscaFuncionarioPorCPF = buscaFuncionarioPorCPF;
 ;

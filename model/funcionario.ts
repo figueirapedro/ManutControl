@@ -1,10 +1,30 @@
 import * as Mongoose from "mongoose";
 import { Cargo } from "./cargo";
+import { validarEmail } from "../controller/loginController";
+
+
+export function validarCPF(value: string) {
+    if (typeof value !== 'string') {
+        return false;
+    }
+
+    value = value.replace(/[^\d]+/g, '');
+
+    if (value.length !== 11 || !!value.match(/(\d)\1{10}/)) {
+        return false;
+    }
+
+    const values = value.split('').map(el => +el);
+    const rest = (count) => (values.slice(0, count - 12).reduce((soma, el, index) => (soma + el * (count - index)), 0) * 10) % 11 % 10;
+
+    return rest(10) === values[9] && rest(11) === values[10];
+}
 
 export class Funcionario {
 
     Id: String;
-    CPF: Number;
+    Email: String;
+    CPF: String;
     Nome: String;
     Cargo: Cargo;
     Disponibilidade: String;
@@ -35,34 +55,55 @@ export class Funcionario {
         return this.CPF;
     }
 
+    getSenha() {
+        return this.Senha;
+    }
+
+    getEmail() {
+        return this.Email;
+    }
+
+    setEmail(Email) {
+        this.Email = validarEmail(Email) ? Email : undefined;
+    }
+
+    setSenha(Senha) {
+        this.Senha = Senha;
+    }
+
     setCPF(CPF) {
-        this.CPF = CPF;
+        this.CPF = validarCPF(CPF) ? CPF : undefined;
     }
 
     setId(Id) {
         this.Id = Id;
     }
+
     setNome(Nome) {
         this.Nome = Nome;
     }
+
     setCargo(Cargo) {
         this.Cargo = Cargo;
     }
+
     setDisponibilidade(Disponibilidade) {
         this.Disponibilidade = Disponibilidade;
     }
+
     setData(Data) {
         this.Data = Data;
     }
 }
 
 const FuncionarioSchema = new Mongoose.Schema({
-    CPF: Number,
+    CPF: String,
+    Email: String,
     Nome: String,
     Cargo: String,
     Disponibilidade: String,
     Data: Date,
-    Senha: String,
+    Senha: String
 })
 
 export const Model = Mongoose.model("Funcionario", FuncionarioSchema);

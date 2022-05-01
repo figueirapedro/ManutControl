@@ -1,9 +1,10 @@
 "use strict";
 var Express = require("express");
-var Router = Express.Router();
 var setorController_1 = require("../controller/setorController");
-Router.get("/setor", setorController_1.listarSetor);
-Router.post("/setor", setorController_1.inserirSetor);
-Router.put("/setor/:id", setorController_1.alterarSetor);
-Router["delete"]("/setor/:id", setorController_1.removerSetor);
+var loginController_1 = require("../controller/loginController");
+var Router = Express.Router();
+Router.get("/setor", loginController_1.autenticarJWT, setorController_1.listarSetor);
+Router.post("/setor", loginController_1.autenticarJWT, setorController_1.inserirSetor);
+Router.put("/setor/:id", loginController_1.autenticarJWT, setorController_1.alterarSetor);
+Router["delete"]("/setor/:id", loginController_1.autenticarJWT, setorController_1.removerSetor);
 module.exports = Router;

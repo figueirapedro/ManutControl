@@ -1,4 +1,5 @@
-import { Model } from "../model/funcionario";
+import { validarCPF, Model, Funcionario } from "../model/funcionario";
+import { hashearTexto } from "./loginController";
 
 export async function listarFuncionario(req, res) {
     const funcionarios = await Model.find({});
@@ -10,20 +11,30 @@ export async function listarFuncionario(req, res) {
     }
 };
 export async function inserirFuncionario(req, res) {
-
     const funcionarios = new Model(req.body);
 
     try {
+        if (typeof funcionarios.CPF != "undefined" && !validarCPF(funcionarios.CPF)) 
+            throw Error("CPF Inválido!");
+
+        if (await buscaFuncionarioPorCPF(funcionarios.CPF) || await buscaFuncionarioPorEmail(funcionarios.Email)) 
+            throw Error("Funcionario já cadastrado!");
+
+        funcionarios.CPF = hashearTexto(funcionarios.CPF);
+        funcionarios.Senha = hashearTexto(funcionarios.Senha);
+
         await funcionarios.save();
         res.send(funcionarios);
-    } catch (error) {
-        res.status(500).send(error);
+    } catch (Error) {
+        res.status(500).send(Error);
     }
 };
 
 export async function alterarFuncionario(req, res) {
     try {
         const funcionarios = await Model.findByIdAndUpdate(req.params.id, req.body);
+
+        if (typeof funcionarios.CPF == "undefined" && !validarCPF(funcionarios.CPF)) throw new Error("CPF Inválido!");
 
         await funcionarios.save();
         res.send(funcionarios);
@@ -41,4 +52,16 @@ export async function removerFuncionario(req, res) {
     } catch (error) {
         res.status(500).send(error);
     }
+};
+
+export async function buscaFuncionarioPorEmail(email: string) {
+    const funcionario = await Model.find({ Email: email });
+
+    return funcionario[0];
+};
+
+export async function buscaFuncionarioPorCPF(cpf: string) {
+    const funcionario = await Model.find({ CPF: cpf });
+
+    return funcionario[0];
 };

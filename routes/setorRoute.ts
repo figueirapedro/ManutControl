@@ -1,10 +1,12 @@
 import * as Express from "express";
-const Router = Express.Router();
 import { inserirSetor, listarSetor, alterarSetor, removerSetor } from "../controller/setorController";
+import { autenticarJWT } from "../controller/loginController";
 
-Router.get("/setor", listarSetor);
-Router.post("/setor", inserirSetor);
-Router.put("/setor/:id", alterarSetor);
-Router.delete("/setor/:id", removerSetor);
+const Router = Express.Router();
+
+Router.get("/setor", autenticarJWT, listarSetor);
+Router.post("/setor", autenticarJWT, inserirSetor);
+Router.put("/setor/:id", autenticarJWT, alterarSetor);
+Router.delete("/setor/:id", autenticarJWT, removerSetor);
 
 export = Router;

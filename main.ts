@@ -12,25 +12,26 @@ import * as setorRouter from "./routes/setorRoute";
 
 dotenv.config();
 
-const App = Express();
+const Server = Express();
+const Port = process.env.port;
 
 Mongoose.connect(
     process.env.PRD_DB_CONN_STRING,
 );
 
-App.use(Express.json());
-App.use(Express.urlencoded({ extended: true }))
-App.use(Express.static(__dirname));
+Server.use(Express.json());
+Server.use(Express.urlencoded({ extended: true }))
+Server.use(Express.static(__dirname));
 
-App.use("/api/v1", cargoRouter);
-App.use("/api/v1", funcionarioRouter);
-App.use("/api/v1", loginRouter);
-App.use("/api/v1", equipamentoRouter);
-App.use("/api/v1", manutencaoRouter);
-App.use("/api/v1", pecaRouter);
-App.use("/api/v1", qrcodeRouter);
-App.use("/api/v1", setorRouter);
+Server.use("/api/v1", loginRouter);
+Server.use("/api/v1", funcionarioRouter);
+Server.use("/api/v1", cargoRouter);
+Server.use("/api/v1", equipamentoRouter);
+Server.use("/api/v1", manutencaoRouter);
+Server.use("/api/v1", pecaRouter);
+Server.use("/api/v1", qrcodeRouter);
+Server.use("/api/v1", setorRouter);
 
-App.listen(3000, () => {
-    console.log("Running on Port 3000...\n");
+Server.listen(Port, () => {
+    console.log(`Server running on Port ${ Port }...\n`);
 });
