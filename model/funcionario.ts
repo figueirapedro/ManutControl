@@ -2,7 +2,6 @@ import * as Mongoose from "mongoose";
 import { Cargo } from "./cargo";
 import { validarEmail } from "../controller/loginController";
 
-
 export function validarCPF(value: string) {
     if (typeof value !== 'string') {
         return false;
