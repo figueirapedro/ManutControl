@@ -51,7 +51,6 @@ var Manutencao = /** @class */ (function () {
 }());
 exports.Manutencao = Manutencao;
 var ManutencaoSchema = new Mongoose.Schema({
-    Id: Number,
     Descricao: String,
     Tipo: String,
     Funcionario: String,

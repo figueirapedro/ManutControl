@@ -24,7 +24,7 @@ export async function listarCargo(req, res) {
 
 export async function alterarCargo(req, res) {
     try {
-        const cargos = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        const cargos = await Model.findByIdAndUpdate(req.params.id, req.body);
         
         await cargos.save();
         res.send(cargos);
@@ -35,7 +35,7 @@ export async function alterarCargo(req, res) {
 
 export async function removerCargo(req, res) {
     try {
-        const cargos = await Model.findOneAndDelete({ Id: req.params.id });
+        const cargos = await Model.findByIdAndDelete(req.params.id);
 
         if (!cargos) res.status(404).send("No item found");
         res.status(200).send();

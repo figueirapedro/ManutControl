@@ -51,7 +51,6 @@ var Peca = /** @class */ (function () {
 }());
 exports.Peca = Peca;
 var PecaSchema = new Mongoose.Schema({
-    Id: Number,
     Descricao: String,
     Quantidade: Number,
     QuantidadeMinima: Number,

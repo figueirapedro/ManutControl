@@ -22,7 +22,7 @@ export async function inserirPeca(req, res) {
 
 export async function alterarPeca(req, res) {
     try {
-        const pecas = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        const pecas = await Model.findByIdAndUpdate(req.params.id, req.body);
         await pecas.save();
         res.send(pecas);
     } catch (error) {
@@ -31,7 +31,7 @@ export async function alterarPeca(req, res) {
 
 export async function removerPeca(req, res) {
     try {
-        const pecas = await Model.findOneAndDelete({ Id: req.params.id });
+        const pecas = await Model.findByIdAndDelete(req.params.id);
 
         if (!pecas) res.status(404).send("No item found");
         res.status(200).send();

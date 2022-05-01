@@ -67,7 +67,7 @@ export async function inserirQrcode(req, res) {
 
 export async function alterarQrcode(req, res) {
   try {
-    const qrcodes = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+    const qrcodes = await Model.findByIdAndUpdate(req.params.id, req.body);
     
     await qrcodes.save();
     res.send(qrcodes);
@@ -78,7 +78,7 @@ export async function alterarQrcode(req, res) {
 
 export async function removerQrcode(req, res) {
   try {
-    const qrcodes = await Model.findOneAndDelete({ Id: req.params.id });
+    const qrcodes = await Model.findByIdAndDelete(req.params.id);
 
     if (!qrcodes) res.status(404).send("No item found");
     res.status(200).send();

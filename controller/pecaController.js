@@ -92,7 +92,7 @@ function alterarPeca(req, res) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, peca_1.Model.findOneAndUpdate({ Id: req.params.id }, req.body)];
+                    return [4 /*yield*/, peca_1.Model.findByIdAndUpdate(req.params.id, req.body)];
                 case 1:
                     pecas = _a.sent();
                     return [4 /*yield*/, pecas.save()];
@@ -118,7 +118,7 @@ function removerPeca(req, res) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, peca_1.Model.findOneAndDelete({ Id: req.params.id })];
+                    return [4 /*yield*/, peca_1.Model.findByIdAndDelete(req.params.id)];
                 case 1:
                     pecas = _a.sent();
                     if (!pecas)

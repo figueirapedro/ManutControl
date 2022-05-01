@@ -3,7 +3,7 @@ import { Cargo } from "./cargo";
 
 export class Funcionario {
 
-    Id: Number;
+    Id: String;
     CPF: Number;
     Nome: String;
     Cargo: Cargo;
@@ -57,7 +57,6 @@ export class Funcionario {
 }
 
 const FuncionarioSchema = new Mongoose.Schema({
-    Id: Number,
     CPF: Number,
     Nome: String,
     Cargo: String,

@@ -63,7 +63,6 @@ var Equipamento = /** @class */ (function () {
 }());
 exports.Equipamento = Equipamento;
 var EquipamentoSchema = new Mongoose.Schema({
-    Id: Number,
     Descricao: String,
     dataEntrada: Date,
     Tag: String,

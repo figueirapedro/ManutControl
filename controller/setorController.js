@@ -93,7 +93,7 @@ function alterarSetor(req, res) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, setor_1.Model.findOneAndUpdate({ Id: req.params.id }, req.body)];
+                    return [4 /*yield*/, setor_1.Model.findByIdAndUpdate(req.params.id, req.body)];
                 case 1:
                     setor = _a.sent();
                     return [4 /*yield*/, setor.save()];
@@ -119,7 +119,7 @@ function removerSetor(req, res) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, setor_1.Model.findOneAndDelete({ Id: req.params.id })];
+                    return [4 /*yield*/, setor_1.Model.findByIdAndDelete(req.params.id)];
                 case 1:
                     setor = _a.sent();
                     if (!setor)

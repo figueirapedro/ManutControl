@@ -6,7 +6,7 @@ import { QRCode } from "./qrcode";
 
 export class Manutencao {
 
-    Id: Number;
+    Id: String;
     Descricao: String;
     Tipo: TipoManuntecao;
     Funcionario: Funcionario;
@@ -72,7 +72,6 @@ export class Manutencao {
 }
 
 const ManutencaoSchema = new Mongoose.Schema({
-    Id: Number,
     Descricao: String,
     Tipo: String,
     Funcionario: String,

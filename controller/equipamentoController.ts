@@ -25,7 +25,7 @@ export async function listarEquipamento(req, res) {
 
 export async function alterarEquipamento(req, res) {
     try {
-        const equipamentos = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        const equipamentos = await Model.findByIdAndUpdate(req.params.id, req.body);
         await equipamentos.save();
         res.send(equipamentos);
     } catch (error) {
@@ -35,7 +35,7 @@ export async function alterarEquipamento(req, res) {
 
 export async function removerEquipamento(req, res) {
     try {
-        const equipamentos = await Model.findOneAndDelete({ Id: req.params.id });
+        const equipamentos = await Model.findByIdAndDelete(req.params.id);
 
         if (!equipamentos) res.status(404).send("No item found");
         res.status(200).send();

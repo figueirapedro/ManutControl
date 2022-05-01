@@ -2,7 +2,7 @@ import * as Mongoose from "mongoose";
 
 export class Peca {
 
-    Id: Number;
+    Id: String;
     Descricao: String;
     Quantidade: Number;
     QuantidadeMinima: Number;
@@ -62,7 +62,6 @@ export class Peca {
 }
 
 const PecaSchema = new Mongoose.Schema({
-    Id: Number,
     Descricao: String,
     Quantidade: Number,
     QuantidadeMinima: Number,

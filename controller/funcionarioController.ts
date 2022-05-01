@@ -23,7 +23,7 @@ export async function inserirFuncionario(req, res) {
 
 export async function alterarFuncionario(req, res) {
     try {
-        const funcionarios = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        const funcionarios = await Model.findByIdAndUpdate(req.params.id, req.body);
 
         await funcionarios.save();
         res.send(funcionarios);
@@ -34,7 +34,7 @@ export async function alterarFuncionario(req, res) {
 
 export async function removerFuncionario(req, res) {
     try {
-        const funcionarios = await Model.findOneAndDelete({ Id: req.params.id });
+        const funcionarios = await Model.findByIdAndDelete(req.params.id);
 
         if (!funcionarios) res.status(404).send("No item found");
         res.status(200).send();

@@ -45,7 +45,6 @@ var Funcionario = /** @class */ (function () {
 }());
 exports.Funcionario = Funcionario;
 var FuncionarioSchema = new Mongoose.Schema({
-    Id: Number,
     CPF: Number,
     Nome: String,
     Cargo: String,

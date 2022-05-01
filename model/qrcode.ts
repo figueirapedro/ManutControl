@@ -1,10 +1,10 @@
 import * as Mongoose from "mongoose";
 
 export class QRCode {
-    Id:Number;
-    Code:String;
-    dataCriacao:Date;
-    dataAtualizacao:Date;
+    Id: String;
+    Code: String;
+    dataCriacao: Date;
+    dataAtualizacao: Date;
 
     getId() {
         return this.Id;
@@ -40,11 +40,10 @@ export class QRCode {
 
 }
 
-const QRCodechema = new Mongoose.Schema({ 
-    Id:Number,
-    Code:String,
-    dataCriacao:Date,
-    dataAtualizacao:Date,
- })
+const QRCodechema = new Mongoose.Schema({
+    Code: String,
+    dataCriacao: Date,
+    dataAtualizacao: Date,
+})
 
 export const Model = Mongoose.model("QRCode", QRCodechema);

@@ -14,12 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/api/v1/peca",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"peca"
 							]
 						}
@@ -35,11 +37,6 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "Id",
-									"value": "1",
-									"type": "default"
-								},
-								{
 									"key": "Descricao",
 									"value": "Teste",
 									"type": "default"
@@ -47,12 +44,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca",
+							"raw": "localhost:3000/api/v1/peca",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"peca"
 							]
 						}
@@ -75,12 +74,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/peca/123",
+							"raw": "localhost:3000/api/v1/peca/123",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"peca",
 								"123"
 							]
@@ -94,12 +95,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/peca/123",
+							"raw": "localhost:3000/api/v1/peca/123",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"peca",
 								"123"
 							]
@@ -118,12 +121,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/cargo",
+							"raw": "localhost:3000/api/v1/cargo",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"cargo"
 							]
 						}
@@ -139,11 +144,6 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "Id",
-									"value": "1",
-									"type": "default"
-								},
-								{
 									"key": "Descricao",
 									"value": "Teste",
 									"type": "default"
@@ -151,12 +151,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/cargo",
+							"raw": "localhost:3000/api/v1/cargo",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"cargo"
 							]
 						}
@@ -179,12 +181,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/cargo/1",
+							"raw": "localhost:3000/api/v1/cargo/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"cargo",
 								"1"
 							]
@@ -198,12 +202,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/cargo/1",
+							"raw": "localhost:3000/api/v1/cargo/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"cargo",
 								"1"
 							]
@@ -222,12 +228,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/api/v1/equipamento",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"equipamento"
 							]
 						}
@@ -243,11 +251,6 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "Id",
-									"value": "2",
-									"type": "default"
-								},
-								{
 									"key": "Descricao",
 									"value": "Teste",
 									"type": "default"
@@ -255,12 +258,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/equipamento",
+							"raw": "localhost:3000/api/v1/equipamento",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"equipamento"
 							]
 						}
@@ -283,12 +288,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/equipamento/2",
+							"raw": "localhost:3000/api/v1/equipamento/2",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"equipamento",
 								"2"
 							]
@@ -302,12 +309,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/equipamento/2",
+							"raw": "localhost:3000/api/v1/equipamento/2",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"equipamento",
 								"2"
 							]
@@ -326,12 +335,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/funcionario",
+							"raw": "localhost:3000/api/v1/funcionario",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"funcionario"
 							]
 						}
@@ -347,11 +358,6 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "Id",
-									"value": "1",
-									"type": "default"
-								},
-								{
 									"key": "Nome",
 									"value": "Teste",
 									"type": "default"
@@ -359,12 +365,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/funcionario",
+							"raw": "localhost:3000/api/v1/funcionario",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"funcionario"
 							]
 						}
@@ -387,12 +395,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/funcionario/1",
+							"raw": "localhost:3000/api/v1/funcionario/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"funcionario",
 								"1"
 							]
@@ -410,12 +420,14 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/funcionario/1",
+							"raw": "localhost:3000/api/v1/funcionario/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"funcionario",
 								"1"
 							]
@@ -434,12 +446,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/qrcode/",
+							"raw": "localhost:3000/api/v1/qrcode/",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode",
 								""
 							]
@@ -466,12 +480,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode/consulta",
+							"raw": "localhost:3000/api/v1/qrcode/consulta",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode",
 								"consulta"
 							]
@@ -500,12 +516,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode",
+							"raw": "localhost:3000/api/v1/qrcode",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode"
 							]
 						}
@@ -533,12 +551,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode",
+							"raw": "localhost:3000/api/v1/qrcode",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode"
 							]
 						}
@@ -566,12 +586,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode",
+							"raw": "localhost:3000/api/v1/qrcode",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode"
 							]
 						}
@@ -584,12 +606,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/qrcode/teste",
+							"raw": "localhost:3000/api/v1/qrcode/teste",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode",
 								"teste"
 							]
@@ -613,12 +637,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode/string",
+							"raw": "localhost:3000/api/v1/qrcode/string",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode",
 								"string"
 							],
@@ -649,12 +675,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode/dataurl",
+							"raw": "localhost:3000/api/v1/qrcode/dataurl",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode",
 								"dataurl"
 							]
@@ -683,12 +711,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/qrcode/file",
+							"raw": "localhost:3000/api/v1/qrcode/file",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"qrcode",
 								"file"
 							]
@@ -707,12 +737,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/setor",
+							"raw": "localhost:3000/api/v1/setor",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"setor"
 							]
 						}
@@ -728,11 +760,6 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "Id",
-									"value": "1",
-									"type": "default"
-								},
-								{
 									"key": "Nome",
 									"value": "Produção X",
 									"type": "default"
@@ -740,12 +767,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/setor",
+							"raw": "localhost:3000/api/v1/setor",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"setor"
 							]
 						}
@@ -768,12 +797,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/setor/1",
+							"raw": "localhost:3000/api/v1/setor/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"setor",
 								"1"
 							]
@@ -787,12 +818,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/setor/1",
+							"raw": "localhost:3000/api/v1/setor/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"setor",
 								"1"
 							]
@@ -811,12 +844,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/manutencao",
+							"raw": "localhost:3000/api/v1/manutencao",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"manutencao"
 							]
 						}
@@ -832,11 +867,6 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "Id",
-									"value": "1",
-									"type": "default"
-								},
-								{
 									"key": "Descricao",
 									"value": "TESTE",
 									"type": "default"
@@ -844,12 +874,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/manutencao",
+							"raw": "localhost:3000/api/v1/manutencao",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"manutencao"
 							]
 						}
@@ -872,12 +904,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/manutencao/1",
+							"raw": "localhost:3000/api/v1/manutencao/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"manutencao",
 								"1"
 							]
@@ -895,12 +929,14 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/manutencao/1",
+							"raw": "localhost:3000/api/v1/manutencao/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"manutencao",
 								"1"
 							]
@@ -934,12 +970,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/login/criptografar",
+							"raw": "localhost:3000/api/v1/login/criptografar",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"login",
 								"criptografar"
 							]
@@ -969,12 +1007,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/login/descriptografar",
+							"raw": "localhost:3000/api/v1/login/descriptografar",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"login",
 								"descriptografar"
 							]
@@ -1003,12 +1043,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/login",
+							"raw": "localhost:3000/api/v1/login",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
+								"v1",
 								"login"
 							]
 						}

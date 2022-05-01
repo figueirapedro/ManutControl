@@ -6,7 +6,7 @@ import * as Mongoose from "mongoose";
 
 export class Equipamento {
 
-    Id: Number;
+    Id: String;
     Descricao: String;
     dataEntrada: Date;
     Tag: String;
@@ -90,7 +90,6 @@ export class Equipamento {
 }
 
 const EquipamentoSchema = new Mongoose.Schema({
-    Id: Number,
     Descricao: String,
     dataEntrada: Date,
     Tag: String,

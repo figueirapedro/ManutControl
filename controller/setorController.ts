@@ -25,7 +25,7 @@ export async function listarSetor(req, res) {
 
 export async function alterarSetor(req, res) {
     try {
-        const setor = await Model.findOneAndUpdate({ Id: req.params.id }, req.body);
+        const setor = await Model.findByIdAndUpdate(req.params.id, req.body);
         await setor.save();
         res.send(setor);
     } catch (error) {
@@ -35,7 +35,7 @@ export async function alterarSetor(req, res) {
 
 export async function removerSetor(req, res) {
     try {
-        const setor = await Model.findOneAndDelete({ Id: req.params.id });
+        const setor = await Model.findByIdAndDelete(req.params.id);
 
         if (!setor) res.status(404).send("No item found");
         res.status(200).send();

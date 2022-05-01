@@ -27,7 +27,6 @@ export class Cargo {
 }
 
 const CargoSchema = new Mongoose.Schema({
-    Id: String,
     Descricao: String,
 })
 

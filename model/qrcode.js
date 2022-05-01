@@ -33,7 +33,6 @@ var QRCode = /** @class */ (function () {
 }());
 exports.QRCode = QRCode;
 var QRCodechema = new Mongoose.Schema({
-    Id: Number,
     Code: String,
     dataCriacao: Date,
     dataAtualizacao: Date

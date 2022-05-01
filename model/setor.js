@@ -23,7 +23,6 @@ var Setor = /** @class */ (function () {
 }());
 exports.Setor = Setor;
 var SetorSchema = new Mongoose.Schema({
-    Id: Number,
     Nome: String
 });
 exports.Model = Mongoose.model("Setor", SetorSchema);
