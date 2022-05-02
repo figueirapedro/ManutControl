@@ -9,6 +9,7 @@ import * as manutencaoRouter from "./routes/manutencaoRoute";
 import * as pecaRouter from "./routes/pecaRoute";
 import * as qrcodeRouter from "./routes/qrcodeRoute";
 import * as setorRouter from "./routes/setorRoute";
+import * as viewRouter from "./routes/viewRoute";
 
 dotenv.config();
 
@@ -22,6 +23,8 @@ Mongoose.connect(
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }))
 Server.use(Express.static(__dirname));
+
+Server.use("/", viewRouter);
 
 Server.use("/api/v1", loginRouter);
 Server.use("/api/v1", funcionarioRouter);
