@@ -21,10 +21,10 @@ Mongoose.connect(
 );
 
 Server.use(Express.json());
-Server.use(Express.urlencoded({ extended: true }))
-Server.use(Express.static(__dirname));
+Server.use(Express.urlencoded({ extended: true }));
+Server.use(Express.static(__dirname, "public"));
 
-Server.use("/", viewRouter);
+Server.use(viewRouter);
 
 Server.use("/api/v1", loginRouter);
 Server.use("/api/v1", funcionarioRouter);
@@ -36,5 +36,5 @@ Server.use("/api/v1", qrcodeRouter);
 Server.use("/api/v1", setorRouter);
 
 Server.listen(Port, () => {
-    console.log(`Server running on Port ${ Port }...\n`);
+    console.log(`Server running on Port ${Port}...\n`);
 });
