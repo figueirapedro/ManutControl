@@ -1,5 +1,5 @@
 import * as Mongoose from "mongoose";
-import * as Cargo from "./cargo";
+import { Cargo } from "./cargo";
 import { validarEmail } from "../controller/loginController";
 
 export function validarCPF(value: string) {

@@ -13,10 +13,10 @@ import * as setorRouter from "./routes/setorRoute";
 dotenv.config();
 
 const Server = Express();
-const Port = process.env.port;
+const Port = process.env.PORT || 3000;
 
 Mongoose.connect(
-    process.env.PRD_DB_CONN_STRING,
+    process.env.LOCAL_DB_CONN_STRING,
 );
 
 Server.use(Express.json());
