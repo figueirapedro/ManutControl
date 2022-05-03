@@ -15,6 +15,7 @@ dotenv.config();
 
 const Server = Express();
 const Port = process.env.PORT || 3000;
+var distDir = __dirname + "/dist/";
 
 Mongoose.connect(
     process.env.PRD_DB_CONN_STRING,
@@ -23,6 +24,7 @@ Mongoose.connect(
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));
 Server.use(Express.static(__dirname, "public"));
+Server.use(express.static(distDir));
 
 Server.use(viewRouter);
 
