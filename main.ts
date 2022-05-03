@@ -23,8 +23,8 @@ Mongoose.connect(
 
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));
-Server.use(Express.static(__dirname, "public"));
-Server.use(express.static(distDir));
+Server.use(Express.static(__dirname));
+Server.use(Express.static(distDir));
 
 Server.use(viewRouter);
 
