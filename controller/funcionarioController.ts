@@ -15,18 +15,21 @@ export async function inserirFuncionario(req, res) {
 
     try {
         if (typeof funcionarios.CPF != "undefined" && !validarCPF(funcionarios.CPF)) 
-            throw Error("CPF Inválido!");
+            throw new Error("CPF Inválido!");
 
-        if (await buscaFuncionarioPorCPF(funcionarios.CPF) || await buscaFuncionarioPorEmail(funcionarios.Email)) 
-            throw Error("Funcionario já cadastrado!");
+        const consultaCPF = await buscaFuncionarioPorCPF(funcionarios.CPF);
+        const consultaEmail = await buscaFuncionarioPorEmail(funcionarios.Email);
+
+        if (consultaCPF || consultaEmail) 
+            throw new Error("Funcionario já cadastrado!");
 
         funcionarios.CPF = hashearTexto(funcionarios.CPF);
         funcionarios.Senha = hashearTexto(funcionarios.Senha);
 
         await funcionarios.save();
         res.send(funcionarios);
-    } catch (Error) {
-        res.status(500).send(Error);
+    } catch (error) {
+        res.status(500).send(error);
     }
 };
 
@@ -55,13 +58,17 @@ export async function removerFuncionario(req, res) {
 };
 
 export async function buscaFuncionarioPorEmail(email: string) {
+    if ( email == undefined ) return false;
+
     const funcionario = await Model.find({ Email: email });
 
-    return funcionario[0];
+    return funcionario[0] == undefined ? false : funcionario[0];
 };
 
 export async function buscaFuncionarioPorCPF(cpf: string) {
+    if ( cpf == undefined ) return false;
+
     const funcionario = await Model.find({ CPF: cpf });
 
-    return funcionario[0];
+    return funcionario[0] == undefined ? false : funcionario[0];
 };

@@ -62,39 +62,36 @@ exports.listarFuncionario = listarFuncionario;
 ;
 function inserirFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var funcionarios, _a, Error_1;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
+        var funcionarios, consultaCPF, consultaEmail, Error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
                     funcionarios = new funcionario_1.Model(req.body);
-                    _b.label = 1;
+                    _a.label = 1;
                 case 1:
-                    _b.trys.push([1, 6, , 7]);
+                    _a.trys.push([1, 5, , 6]);
                     if (typeof funcionarios.CPF != "undefined" && !(0, funcionario_1.validarCPF)(funcionarios.CPF))
-                        throw Error("CPF Inválido!");
+                        throw new Error("CPF Inválido!");
                     return [4 /*yield*/, buscaFuncionarioPorCPF(funcionarios.CPF)];
                 case 2:
-                    _a = (_b.sent());
-                    if (_a) return [3 /*break*/, 4];
+                    consultaCPF = _a.sent();
                     return [4 /*yield*/, buscaFuncionarioPorEmail(funcionarios.Email)];
                 case 3:
-                    _a = (_b.sent());
-                    _b.label = 4;
-                case 4:
-                    if (_a)
-                        throw Error("Funcionario já cadastrado!");
+                    consultaEmail = _a.sent();
+                    if (consultaCPF || consultaEmail)
+                        throw new Error("Funcionario já cadastrado!");
                     funcionarios.CPF = (0, loginController_1.hashearTexto)(funcionarios.CPF);
                     funcionarios.Senha = (0, loginController_1.hashearTexto)(funcionarios.Senha);
                     return [4 /*yield*/, funcionarios.save()];
-                case 5:
-                    _b.sent();
+                case 4:
+                    _a.sent();
                     res.send(funcionarios);
-                    return [3 /*break*/, 7];
-                case 6:
-                    Error_1 = _b.sent();
+                    return [3 /*break*/, 6];
+                case 5:
+                    Error_1 = _a.sent();
                     res.status(500).send(Error_1);
-                    return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 6];
+                case 6: return [2 /*return*/];
             }
         });
     });
@@ -159,10 +156,13 @@ function buscaFuncionarioPorEmail(email) {
         var funcionario;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, funcionario_1.Model.find({ Email: email })];
+                case 0:
+                    if (email == undefined)
+                        return [2 /*return*/, false];
+                    return [4 /*yield*/, funcionario_1.Model.find({ Email: email })];
                 case 1:
                     funcionario = _a.sent();
-                    return [2 /*return*/, funcionario[0]];
+                    return [2 /*return*/, funcionario[0] == undefined ? false : funcionario[0]];
             }
         });
     });
@@ -174,10 +174,13 @@ function buscaFuncionarioPorCPF(cpf) {
         var funcionario;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, funcionario_1.Model.find({ CPF: cpf })];
+                case 0:
+                    if (cpf == undefined)
+                        return [2 /*return*/, false];
+                    return [4 /*yield*/, funcionario_1.Model.find({ CPF: cpf })];
                 case 1:
                     funcionario = _a.sent();
-                    return [2 /*return*/, funcionario[0]];
+                    return [2 /*return*/, funcionario[0] == undefined ? false : funcionario[0]];
             }
         });
     });
