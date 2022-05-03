@@ -14,7 +14,7 @@ import * as viewRouter from "./routes/viewRoute";
 dotenv.config();
 
 const Server = Express();
-const Port = process.env.PORT || process.env.port || 3000;
+const Port = process.env.PORT || 3000;
 
 Mongoose.connect(
     process.env.PRD_DB_CONN_STRING,
