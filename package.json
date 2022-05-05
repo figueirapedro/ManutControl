@@ -14,7 +14,7 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^16.0.23",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "crypto-js": "^4.1.1",

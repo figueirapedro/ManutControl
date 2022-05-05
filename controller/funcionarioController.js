@@ -62,7 +62,7 @@ exports.listarFuncionario = listarFuncionario;
 ;
 function inserirFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var funcionarios, consultaCPF, consultaEmail, Error_1;
+        var funcionarios, consultaCPF, consultaEmail, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -88,8 +88,8 @@ function inserirFuncionario(req, res) {
                     res.send(funcionarios);
                     return [3 /*break*/, 6];
                 case 5:
-                    Error_1 = _a.sent();
-                    res.status(500).send(Error_1);
+                    error_1 = _a.sent();
+                    res.status(500).send(error_1);
                     return [3 /*break*/, 6];
                 case 6: return [2 /*return*/];
             }
@@ -100,7 +100,7 @@ exports.inserirFuncionario = inserirFuncionario;
 ;
 function alterarFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var funcionarios, error_1;
+        var funcionarios, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -116,8 +116,8 @@ function alterarFuncionario(req, res) {
                     res.send(funcionarios);
                     return [3 /*break*/, 4];
                 case 3:
-                    error_1 = _a.sent();
-                    res.status(500).send(error_1);
+                    error_2 = _a.sent();
+                    res.status(500).send(error_2);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }
@@ -128,7 +128,7 @@ exports.alterarFuncionario = alterarFuncionario;
 ;
 function removerFuncionario(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var funcionarios, error_2;
+        var funcionarios, error_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -141,8 +141,8 @@ function removerFuncionario(req, res) {
                     res.status(200).send();
                     return [3 /*break*/, 3];
                 case 2:
-                    error_2 = _a.sent();
-                    res.status(500).send(error_2);
+                    error_3 = _a.sent();
+                    res.status(500).send(error_3);
                     return [3 /*break*/, 3];
                 case 3: return [2 /*return*/];
             }
