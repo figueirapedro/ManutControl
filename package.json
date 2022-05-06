@@ -2,7 +2,7 @@
   "name": "manutcontrol",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./main.js"
@@ -17,6 +17,7 @@
     "@types/node": "^16.0.23",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
+    "build": "^0.1.4",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
@@ -25,6 +26,8 @@
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.0",
     "nodemon": "^2.0.16",
+    "prebuild": "^11.0.3",
     "qrcode": "^1.5.0"
-  }
+  },
+  "engines": { "node" : "16.15.0"}
 }
