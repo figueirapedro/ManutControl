@@ -3,7 +3,7 @@ import * as Path from "path";
 
 const Router = Express.Router();
 
-Router.get("/home", (req, res) => {
+Router.get("/", (req, res) => {
     res.sendFile(Path.join(__dirname, "../view/index.html"))
 });
 

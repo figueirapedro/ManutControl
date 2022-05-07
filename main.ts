@@ -15,17 +15,11 @@ dotenv.config();
 
 const Server = Express();
 const Port = process.env.PORT || 3000;
-const DB = process.env.PRD_DB_CONN_STRING;
 var distDir = __dirname + "/dist/";
 
-console.log(DB)
-console.log(process.env.LOCAL_DB_CONN_STRING)
-console.log(process.env.secret)
-
 Mongoose.connect(
-    DB,
+    process.env.PRD_DB_CONN_STRING,
 );
-
 
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));
