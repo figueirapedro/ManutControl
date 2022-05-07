@@ -10,6 +10,7 @@ import * as pecaRouter from "./routes/pecaRoute";
 import * as qrcodeRouter from "./routes/qrcodeRoute";
 import * as setorRouter from "./routes/setorRoute";
 import * as viewRouter from "./routes/viewRoute";
+import * as Cors from "cors";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ Mongoose.connect(
     process.env.PRD_DB_CONN_STRING,
 );
 
+Server.use(Cors());
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));
 Server.use(Express.static(__dirname));
