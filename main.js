@@ -18,6 +18,7 @@ var Server = Express();
 var Port = process.env.PORT || 3000;
 var distDir = __dirname + "/dist/";
 Mongoose.connect(process.env.PRD_DB_CONN_STRING);
+// Libera todas as politicas de CORS -> transforma em uma API Publica
 Server.use(Cors());
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));

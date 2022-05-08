@@ -22,7 +22,9 @@ Mongoose.connect(
     process.env.PRD_DB_CONN_STRING,
 );
 
+// Libera todas as politicas de CORS -> transforma em uma API Publica
 Server.use(Cors());
+
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));
 Server.use(Express.static(__dirname));
