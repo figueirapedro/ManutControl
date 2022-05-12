@@ -13,7 +13,6 @@ import * as setorRouter from "./routes/setorRoute";
 dotenv.config();
 
 const Server = Express();
-const Port = process.env.PORT || 3000;
 
 Mongoose.connect(
     process.env.LOCAL_DB_CONN_STRING,
@@ -32,6 +31,10 @@ Server.use("/api/v1", pecaRouter);
 Server.use("/api/v1", qrcodeRouter);
 Server.use("/api/v1", setorRouter);
 
-Server.listen(Port, () => {
-    console.log(`Server running on Port ${ Port }...\n`);
-});
+export function StartServer (porta?: Number){
+    const Port = porta || process.env.PORT || 3000;
+
+    Server.listen(Port, () => {
+        console.log(`Server running on Port ${ Port }...\n`);
+    });
+}

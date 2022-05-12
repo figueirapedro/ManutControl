@@ -27,7 +27,7 @@ export class Cargo {
 }
 
 const CargoSchema = new Mongoose.Schema({
-    Descricao: String,
+    Descricao: String
 })
 
 export const Model = Mongoose.model("Cargo", CargoSchema);
