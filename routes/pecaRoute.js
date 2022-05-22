@@ -7,4 +7,8 @@ Router.get("/peca", loginController_1.autenticarJWT, pecaController_1.listarPeca
 Router.post("/peca", loginController_1.autenticarJWT, pecaController_1.inserirPeca);
 Router.put("/peca/:id", loginController_1.autenticarJWT, pecaController_1.alterarPeca);
 Router["delete"]("/peca/:id", loginController_1.autenticarJWT, pecaController_1.removerPeca);
+Router.get("/test/peca", pecaController_1.listarPeca);
+Router.post("/test/peca", pecaController_1.inserirPeca);
+Router.put("/test/peca/:id", pecaController_1.alterarPeca);
+Router["delete"]("/test/peca/:id", pecaController_1.removerPeca);
 module.exports = Router;

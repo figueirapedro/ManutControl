@@ -1,5 +1,4 @@
 "use strict";
-exports.__esModule = true;
 var Express = require("express");
 var Mongoose = require("mongoose");
 var dotenv = require("dotenv");
@@ -13,7 +12,6 @@ var qrcodeRouter = require("./routes/qrcodeRoute");
 var setorRouter = require("./routes/setorRoute");
 dotenv.config();
 var Server = Express();
-var Port = process.env.PORT || 3000;
 Mongoose.connect(process.env.LOCAL_DB_CONN_STRING);
 Server.use(Express.json());
 Server.use(Express.urlencoded({ extended: true }));
@@ -26,6 +24,8 @@ Server.use("/api/v1", manutencaoRouter);
 Server.use("/api/v1", pecaRouter);
 Server.use("/api/v1", qrcodeRouter);
 Server.use("/api/v1", setorRouter);
+var Port = process.env.PORT || 3000;
 Server.listen(Port, function () {
     console.log("Server running on Port ".concat(Port, "...\n"));
 });
+module.exports = Server;

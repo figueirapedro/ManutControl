@@ -31,10 +31,11 @@ Server.use("/api/v1", pecaRouter);
 Server.use("/api/v1", qrcodeRouter);
 Server.use("/api/v1", setorRouter);
 
-export function StartServer (porta?: Number){
-    const Port = porta || process.env.PORT || 3000;
+const Port = process.env.PORT || 3000;
 
-    Server.listen(Port, () => {
-        console.log(`Server running on Port ${ Port }...\n`);
-    });
-}
+Server.listen(Port, () => {
+    console.log(`Server running on Port ${Port}...\n`);
+});
+
+
+export = Server;

@@ -36,8 +36,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.removerManutencao = exports.alterarManutencao = exports.inserirManutencao = exports.listarManutencao = void 0;
+exports.inserirManutencaoValidacao = exports.removerManutencao = exports.alterarManutencao = exports.inserirManutencao = exports.listarManutencao = void 0;
 var manutencao_1 = require("../model/manutencao");
+var qrcodeController_1 = require("./qrcodeController");
+var funcionarioController_1 = require("./funcionarioController");
 function listarManutencao(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var manutencao;
@@ -135,4 +137,34 @@ function removerManutencao(req, res) {
     });
 }
 exports.removerManutencao = removerManutencao;
+;
+function inserirManutencaoValidacao(req, res) {
+    return __awaiter(this, void 0, void 0, function () {
+        var manutencao, error_4;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    manutencao = new manutencao_1.Model(req.body);
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    if (!(0, qrcodeController_1.consultaQRCodePorCodigo)(manutencao.QRCode.Codigo))
+                        throw new Error("QRCode não existe");
+                    if (!(0, funcionarioController_1.buscaFuncionarioPorId)(manutencao.Funcionario.Id))
+                        throw new Error("Funcionário não existe");
+                    return [4 /*yield*/, manutencao.save()];
+                case 2:
+                    _a.sent();
+                    res.send(manutencao);
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_4 = _a.sent();
+                    res.status(500).send(error_4);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.inserirManutencaoValidacao = inserirManutencaoValidacao;
 ;

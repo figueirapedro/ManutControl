@@ -7,4 +7,8 @@ Router.get("/setor", loginController_1.autenticarJWT, setorController_1.listarSe
 Router.post("/setor", loginController_1.autenticarJWT, setorController_1.inserirSetor);
 Router.put("/setor/:id", loginController_1.autenticarJWT, setorController_1.alterarSetor);
 Router["delete"]("/setor/:id", loginController_1.autenticarJWT, setorController_1.removerSetor);
+Router.get("/test/setor", setorController_1.listarSetor);
+Router.post("/test/setor", setorController_1.inserirSetor);
+Router.put("/test/setor/:id", setorController_1.alterarSetor);
+Router["delete"]("/test/setor/:id", setorController_1.removerSetor);
 module.exports = Router;

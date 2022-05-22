@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.removerQrcode = exports.alterarQrcode = exports.inserirQrcode = exports.listarQrcode = exports.consultaCodigo = exports.toFile = exports.toDataURL = exports.toString = exports.testeGoogle = void 0;
+exports.consultaQRCodePorCodigo = exports.inserirQrcodeValidacao = exports.removerQrcode = exports.alterarQrcode = exports.inserirQrcode = exports.listarQrcode = exports.consultaCodigo = exports.toFile = exports.toDataURL = exports.toString = exports.testeGoogle = void 0;
 var QRCode = require("qrcode");
 var qrcode_1 = require("../model/qrcode");
 // Criar um QR Code aleatório para teste, direcionando para o Google
@@ -170,3 +170,48 @@ function removerQrcode(req, res) {
 }
 exports.removerQrcode = removerQrcode;
 // Fim CRUD de QRCode
+function inserirQrcodeValidacao(req, res) {
+    return __awaiter(this, void 0, void 0, function () {
+        var qrcodes, error_4;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    qrcodes = new qrcode_1.Model(req.body);
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    if (consultaQRCodePorCodigo(qrcodes.Codigo))
+                        throw new Error("Código ja cadastrado");
+                    return [4 /*yield*/, qrcodes.save()];
+                case 2:
+                    _a.sent();
+                    res.send(qrcodes);
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_4 = _a.sent();
+                    res.status(500).send(error_4);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.inserirQrcodeValidacao = inserirQrcodeValidacao;
+function consultaQRCodePorCodigo(codigo) {
+    return __awaiter(this, void 0, void 0, function () {
+        var qrcode;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (codigo == undefined)
+                        return [2 /*return*/, false];
+                    return [4 /*yield*/, qrcode_1.Model.find({ Codigo: codigo })];
+                case 1:
+                    qrcode = _a.sent();
+                    return [2 /*return*/, qrcode[0] == undefined ? false : qrcode[0]];
+            }
+        });
+    });
+}
+exports.consultaQRCodePorCodigo = consultaQRCodePorCodigo;
+;

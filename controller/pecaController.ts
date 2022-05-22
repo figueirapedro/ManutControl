@@ -13,6 +13,8 @@ export async function inserirPeca(req, res) {
     const pecas = new Model(req.body);
 
     try {
+        if(consultaPecaPorDescricao(pecas.Descricao)) throw new Error("Esta peça já foi cadastrada")
+        
         await pecas.save();
         res.send(pecas);
     } catch (error) {
@@ -38,3 +40,11 @@ export async function removerPeca(req, res) {
     } catch (error) {
         res.status(500).send(error);
     }};
+
+    export async function consultaPecaPorDescricao(desc?: string) {
+        if ( desc == undefined ) return false;
+
+        const peca = await Model.find({ Descricao: desc });
+    
+        return peca[0] == undefined ? false : peca[0];
+    };

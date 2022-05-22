@@ -14,4 +14,14 @@ Router.get("/qrcode", autenticarJWT, listarQrcode);
 Router.put("/qrcode/:id", autenticarJWT, alterarQrcode);
 Router.delete("/qrcode/:id", autenticarJWT, removerQrcode);
 
+Router.get("/test/qrcode/teste", testeGoogle);
+Router.post("/test/qrcode/string", toString);
+Router.post("/test/qrcode/dataurl", toDataURL);
+Router.post("/test/qrcode/file", toFile);
+Router.get("/test/qrcode/consulta", consultaCodigo);
+Router.post("/test/qrcode", inserirQrcode);
+Router.get("/test/qrcode", listarQrcode);
+Router.put("/test/qrcode/:id", alterarQrcode);
+Router.delete("/test/qrcode/:id", removerQrcode);
+
 export = Router;

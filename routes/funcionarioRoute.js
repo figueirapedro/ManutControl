@@ -7,4 +7,6 @@ Router.get("/funcionario", funcionarioController_1.listarFuncionario);
 Router.post("/funcionario", funcionarioController_1.inserirFuncionario);
 Router.put("/funcionario/:id", loginController_1.autenticarJWT, funcionarioController_1.alterarFuncionario);
 Router["delete"]("/funcionario/:id", loginController_1.autenticarJWT, funcionarioController_1.removerFuncionario);
+Router.put("/test/funcionario/:id", funcionarioController_1.alterarFuncionario);
+Router["delete"]("/test/funcionario/:id", funcionarioController_1.removerFuncionario);
 module.exports = Router;

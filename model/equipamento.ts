@@ -1,12 +1,14 @@
 import { QRCode } from './qrcode';
 import { Criticidade } from './criticidade';
 import { Status } from './status';
+import { Manutencao } from './manutencao';
 import { Peca } from "./peca";
 import * as Mongoose from "mongoose";
 
 export class Equipamento {
 
     Id: String;
+    Codigo: String;
     Descricao: String;
     dataEntrada: Date;
     Tag: String;
@@ -15,6 +17,7 @@ export class Equipamento {
     Local: String;
     Criticidade: Criticidade;
     QRCode: QRCode;
+    Manutencao: Manutencao;
 
     setId(id) {
         this.Id = id;
@@ -50,6 +53,22 @@ export class Equipamento {
 
     setQRcode(QRCode) {
         this.QRCode = QRCode;
+    }
+
+    setCodigo(Codigo) {
+        this.Codigo = Codigo;
+    }
+
+    setManutencao(Manutencao) {
+        this.Manutencao = Manutencao;
+    }
+
+    getManutencao() {
+        return this.Manutencao;
+    }
+
+    getCodigo() {
+        return this.Codigo;
     }
 
     getQRCode() {
@@ -91,6 +110,7 @@ export class Equipamento {
 
 const EquipamentoSchema = new Mongoose.Schema({
     Descricao: String,
+    Codigo: String,
     dataEntrada: Date,
     Tag: String,
     Status: String,
@@ -98,6 +118,49 @@ const EquipamentoSchema = new Mongoose.Schema({
     Local: String,
     Criticidade: String,
     QRCode: String,
+    Manutencao: String
 });
 
 export const Model = Mongoose.model("Equipamento", EquipamentoSchema);
+
+const EquipamentoSchemaTest = new Mongoose.Schema({
+    Descricao: {
+        type: String,
+        required: true
+    },
+    Codigo: {
+        type: String,
+        required: true
+    },
+    dataEntrada: {
+        type: Date,
+        required: true
+    },
+    Tag: {
+        type: String,
+        required: true
+    },
+    Status: {
+        type: String,
+        required: true
+    },
+    Pecas: {
+        type: String,
+        required: true
+    },
+    Local: {
+        type: String,
+        required: true
+    },
+    Criticidade: {
+        type: String,
+        required: true
+    },
+    QRCode: {
+        type: String,
+        required: true
+    },
+    Manutencao: String
+});
+
+//const ModelTest = Mongoose.model("Equipamento", EquipamentoSchemaTest);

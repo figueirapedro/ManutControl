@@ -32,6 +32,18 @@ var Equipamento = /** @class */ (function () {
     Equipamento.prototype.setQRcode = function (QRCode) {
         this.QRCode = QRCode;
     };
+    Equipamento.prototype.setCodigo = function (Codigo) {
+        this.Codigo = Codigo;
+    };
+    Equipamento.prototype.setManutencao = function (Manutencao) {
+        this.Manutencao = Manutencao;
+    };
+    Equipamento.prototype.getManutencao = function () {
+        return this.Manutencao;
+    };
+    Equipamento.prototype.getCodigo = function () {
+        return this.Codigo;
+    };
     Equipamento.prototype.getQRCode = function () {
         return this.QRCode;
     };
@@ -64,12 +76,54 @@ var Equipamento = /** @class */ (function () {
 exports.Equipamento = Equipamento;
 var EquipamentoSchema = new Mongoose.Schema({
     Descricao: String,
+    Codigo: String,
     dataEntrada: Date,
     Tag: String,
     Status: String,
     Pecas: String,
     Local: String,
     Criticidade: String,
-    QRCode: String
+    QRCode: String,
+    Manutencao: String
 });
 exports.Model = Mongoose.model("Equipamento", EquipamentoSchema);
+var EquipamentoSchemaTest = new Mongoose.Schema({
+    Descricao: {
+        type: String,
+        required: true
+    },
+    Codigo: {
+        type: String,
+        required: true
+    },
+    dataEntrada: {
+        type: Date,
+        required: true
+    },
+    Tag: {
+        type: String,
+        required: true
+    },
+    Status: {
+        type: String,
+        required: true
+    },
+    Pecas: {
+        type: String,
+        required: true
+    },
+    Local: {
+        type: String,
+        required: true
+    },
+    Criticidade: {
+        type: String,
+        required: true
+    },
+    QRCode: {
+        type: String,
+        required: true
+    },
+    Manutencao: String
+});
+//const ModelTest = Mongoose.model("Equipamento", EquipamentoSchemaTest);

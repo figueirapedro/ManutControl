@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.removerCargo = exports.alterarCargo = exports.listarCargo = exports.inserirCargo = void 0;
+exports.buscaSetorPorDescricao = exports.inserirCargoValidacao = exports.removerCargo = exports.alterarCargo = exports.listarCargo = exports.inserirCargo = void 0;
 var cargo_1 = require("../model/cargo");
 // CRUD para Cargo
 function inserirCargo(req, res) {
@@ -138,3 +138,50 @@ function removerCargo(req, res) {
 exports.removerCargo = removerCargo;
 ;
 // Fim CRUD de Cargo
+//V0 para Teste
+function inserirCargoValidacao(req, res) {
+    return __awaiter(this, void 0, void 0, function () {
+        var cargos, error_4;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    cargos = new cargo_1.Model(req.body);
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    if (!buscaSetorPorDescricao(cargos.Descricao))
+                        throw new Error("Setor já existe");
+                    return [4 /*yield*/, cargos.save()];
+                case 2:
+                    _a.sent();
+                    res.send(cargos);
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_4 = _a.sent();
+                    res.status(500).send(error_4);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.inserirCargoValidacao = inserirCargoValidacao;
+;
+function buscaSetorPorDescricao(desc) {
+    return __awaiter(this, void 0, void 0, function () {
+        var setor;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (desc == undefined)
+                        return [2 /*return*/, false];
+                    return [4 /*yield*/, cargo_1.Model.find({ Descricao: desc })];
+                case 1:
+                    setor = _a.sent();
+                    return [2 /*return*/, setor[0] == undefined ? false : setor[0]];
+            }
+        });
+    });
+}
+exports.buscaSetorPorDescricao = buscaSetorPorDescricao;
+;

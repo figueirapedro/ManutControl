@@ -12,4 +12,13 @@ Router.post("/qrcode", loginController_1.autenticarJWT, qrcodeController_1.inser
 Router.get("/qrcode", loginController_1.autenticarJWT, qrcodeController_1.listarQrcode);
 Router.put("/qrcode/:id", loginController_1.autenticarJWT, qrcodeController_1.alterarQrcode);
 Router["delete"]("/qrcode/:id", loginController_1.autenticarJWT, qrcodeController_1.removerQrcode);
+Router.get("/test/qrcode/teste", qrcodeController_1.testeGoogle);
+Router.post("/test/qrcode/string", qrcodeController_1.toString);
+Router.post("/test/qrcode/dataurl", qrcodeController_1.toDataURL);
+Router.post("/test/qrcode/file", qrcodeController_1.toFile);
+Router.get("/test/qrcode/consulta", qrcodeController_1.consultaCodigo);
+Router.post("/test/qrcode", qrcodeController_1.inserirQrcode);
+Router.get("/test/qrcode", qrcodeController_1.listarQrcode);
+Router.put("/test/qrcode/:id", qrcodeController_1.alterarQrcode);
+Router["delete"]("/test/qrcode/:id", qrcodeController_1.removerQrcode);
 module.exports = Router;

@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.buscaFuncionarioPorCPF = exports.buscaFuncionarioPorEmail = exports.removerFuncionario = exports.alterarFuncionario = exports.inserirFuncionario = exports.listarFuncionario = void 0;
+exports.buscaFuncionarioPorId = exports.buscaFuncionarioPorCPF = exports.buscaFuncionarioPorEmail = exports.consultarFuncionarioPorId = exports.removerFuncionario = exports.alterarFuncionario = exports.inserirFuncionario = exports.listarFuncionario = void 0;
 var funcionario_1 = require("../model/funcionario");
 var loginController_1 = require("./loginController");
 function listarFuncionario(req, res) {
@@ -48,7 +48,7 @@ function listarFuncionario(req, res) {
                 case 1:
                     funcionarios = _a.sent();
                     try {
-                        res.send(funcionarios);
+                        res.status(200).send(funcionarios);
                     }
                     catch (error) {
                         res.status(500).send(error);
@@ -70,8 +70,8 @@ function inserirFuncionario(req, res) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 5, , 6]);
-                    if (typeof funcionarios.CPF != "undefined" && !(0, funcionario_1.validarCPF)(funcionarios.CPF))
-                        throw Error("CPF Inválido!");
+                    if (!(0, funcionario_1.validarCPF)(funcionarios.CPF))
+                        throw new Error("CPF Inválido!");
                     return [4 /*yield*/, buscaFuncionarioPorCPF(funcionarios.CPF)];
                 case 2:
                     consultaCPF = _a.sent();
@@ -79,13 +79,13 @@ function inserirFuncionario(req, res) {
                 case 3:
                     consultaEmail = _a.sent();
                     if (consultaCPF || consultaEmail)
-                        throw Error("Funcionario já cadastrado!");
+                        throw new Error("Funcionario já cadastrado!");
                     funcionarios.CPF = (0, loginController_1.hashearTexto)(funcionarios.CPF);
                     funcionarios.Senha = (0, loginController_1.hashearTexto)(funcionarios.Senha);
                     return [4 /*yield*/, funcionarios.save()];
                 case 4:
                     _a.sent();
-                    res.send(funcionarios);
+                    res.status(200).send(funcionarios);
                     return [3 /*break*/, 6];
                 case 5:
                     Error_1 = _a.sent();
@@ -113,7 +113,7 @@ function alterarFuncionario(req, res) {
                     return [4 /*yield*/, funcionarios.save()];
                 case 2:
                     _a.sent();
-                    res.send(funcionarios);
+                    res.status(200).send(funcionarios);
                     return [3 /*break*/, 4];
                 case 3:
                     error_1 = _a.sent();
@@ -138,7 +138,7 @@ function removerFuncionario(req, res) {
                     funcionarios = _a.sent();
                     if (!funcionarios)
                         res.status(404).send("No item found");
-                    res.status(200).send();
+                    res.status(200).send("Removido com sucesso!");
                     return [3 /*break*/, 3];
                 case 2:
                     error_2 = _a.sent();
@@ -150,6 +150,27 @@ function removerFuncionario(req, res) {
     });
 }
 exports.removerFuncionario = removerFuncionario;
+;
+function consultarFuncionarioPorId(req, res) {
+    return __awaiter(this, void 0, void 0, function () {
+        var funcionarios;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, funcionario_1.Model.find({ _id: req.body.id })];
+                case 1:
+                    funcionarios = _a.sent();
+                    try {
+                        res.status(200).send(funcionarios);
+                    }
+                    catch (error) {
+                        res.status(500).send(error);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.consultarFuncionarioPorId = consultarFuncionarioPorId;
 ;
 function buscaFuncionarioPorEmail(email) {
     return __awaiter(this, void 0, void 0, function () {
@@ -186,4 +207,22 @@ function buscaFuncionarioPorCPF(cpf) {
     });
 }
 exports.buscaFuncionarioPorCPF = buscaFuncionarioPorCPF;
+;
+function buscaFuncionarioPorId(id) {
+    return __awaiter(this, void 0, void 0, function () {
+        var funcionario;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (id == undefined)
+                        return [2 /*return*/, false];
+                    return [4 /*yield*/, funcionario_1.Model.find({ _id: id })];
+                case 1:
+                    funcionario = _a.sent();
+                    return [2 /*return*/, funcionario[0] == undefined ? false : funcionario[0]];
+            }
+        });
+    });
+}
+exports.buscaFuncionarioPorId = buscaFuncionarioPorId;
 ;

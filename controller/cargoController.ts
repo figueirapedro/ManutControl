@@ -45,3 +45,26 @@ export async function removerCargo(req, res) {
 };
 
     // Fim CRUD de Cargo
+
+    //V0 para Teste
+
+    export async function inserirCargoValidacao(req, res) {
+        const cargos = new Model(req.body);
+
+        try {
+            if (!buscaSetorPorDescricao(cargos.Descricao)) throw new Error("Setor já existe");
+
+            await cargos.save();
+            res.send(cargos);
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    };
+
+    export async function buscaSetorPorDescricao(desc?) {
+        if ( desc == undefined ) return false;
+    
+        const setor = await Model.find({ Descricao: desc });
+    
+        return setor[0] == undefined ? false : setor[0];
+    };

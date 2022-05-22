@@ -1,3 +1,3 @@
-import { StartServer } from "./main";
+import Server from "./main";
 
-StartServer();
+Server.listen

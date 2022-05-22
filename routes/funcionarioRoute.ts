@@ -9,4 +9,7 @@ Router.post("/funcionario", inserirFuncionario);
 Router.put("/funcionario/:id", autenticarJWT, alterarFuncionario);
 Router.delete("/funcionario/:id", autenticarJWT, removerFuncionario);
 
+Router.put("/test/funcionario/:id", alterarFuncionario);
+Router.delete("/test/funcionario/:id", removerFuncionario);
+
 export = Router;

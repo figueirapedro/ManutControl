@@ -106,3 +106,36 @@ const FuncionarioSchema = new Mongoose.Schema({
 })
 
 export const Model = Mongoose.model("Funcionario", FuncionarioSchema);
+
+const FuncionarioSchemaTest = new Mongoose.Schema({
+    CPF: {
+        type: String,
+        required: true
+    },
+    Email: {
+        type: String,
+        required: true
+    },
+    Nome: {
+        type: String,
+        required: true
+    },
+    Cargo: {
+        type: String,
+        required: true
+    },
+    Disponibilidade: {
+        type: String,
+        required: true
+    },
+    Data: {
+        type: Date,
+        required: true
+    },
+    Senha: {
+        type: String,
+        required: true
+    },
+})
+
+//export const ModelTest = Mongoose.model("Funcionario", FuncionarioSchemaTest);

@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.removerPeca = exports.alterarPeca = exports.inserirPeca = exports.listarPeca = void 0;
+exports.consultaPecaPorDescricao = exports.removerPeca = exports.alterarPeca = exports.inserirPeca = exports.listarPeca = void 0;
 var peca_1 = require("../model/peca");
 function listarPeca(req, res) {
     return __awaiter(this, void 0, void 0, function () {
@@ -69,6 +69,8 @@ function inserirPeca(req, res) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
+                    if (consultaPecaPorDescricao(pecas.Descricao))
+                        throw new Error("Esta peça já foi cadastrada");
                     return [4 /*yield*/, pecas.save()];
                 case 2:
                     _a.sent();
@@ -135,4 +137,22 @@ function removerPeca(req, res) {
     });
 }
 exports.removerPeca = removerPeca;
+;
+function consultaPecaPorDescricao(desc) {
+    return __awaiter(this, void 0, void 0, function () {
+        var peca;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (desc == undefined)
+                        return [2 /*return*/, false];
+                    return [4 /*yield*/, peca_1.Model.find({ Descricao: desc })];
+                case 1:
+                    peca = _a.sent();
+                    return [2 /*return*/, peca[0] == undefined ? false : peca[0]];
+            }
+        });
+    });
+}
+exports.consultaPecaPorDescricao = consultaPecaPorDescricao;
 ;

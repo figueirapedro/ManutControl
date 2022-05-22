@@ -31,3 +31,9 @@ const CargoSchema = new Mongoose.Schema({
 })
 
 export const Model = Mongoose.model("Cargo", CargoSchema);
+
+const CargoSchemaTest = new Mongoose.Schema({
+    Descricao: {type :String, required: true}
+})
+
+//export const ModelTest = Mongoose.model("Cargo", CargoSchemaTest);

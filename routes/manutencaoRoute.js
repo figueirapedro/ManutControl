@@ -7,4 +7,8 @@ Router.get("/manutencao", loginController_1.autenticarJWT, manutencaoController_
 Router.post("/manutencao", loginController_1.autenticarJWT, manutencaoController_1.inserirManutencao);
 Router.put("/manutencao/:id", loginController_1.autenticarJWT, manutencaoController_1.alterarManutencao);
 Router["delete"]("/manutencao/:id", loginController_1.autenticarJWT, manutencaoController_1.removerManutencao);
+Router.get("/test/manutencao", manutencaoController_1.listarManutencao);
+Router.post("/test/manutencao", manutencaoController_1.inserirManutencao);
+Router.put("/test/manutencao/:id", manutencaoController_1.alterarManutencao);
+Router["delete"]("/test/manutencao/:id", manutencaoController_1.removerManutencao);
 module.exports = Router;

@@ -7,4 +7,8 @@ Router.get("/cargo", loginController_1.autenticarJWT, cargoController_1.listarCa
 Router.post("/cargo", loginController_1.autenticarJWT, cargoController_1.inserirCargo);
 Router.put("/cargo/:id", loginController_1.autenticarJWT, cargoController_1.alterarCargo);
 Router["delete"]("/cargo/:id", loginController_1.autenticarJWT, cargoController_1.removerCargo);
+Router.get("/test/cargo", cargoController_1.listarCargo);
+Router.post("/test/cargo", cargoController_1.inserirCargo);
+Router.put("/test/cargo/:id", cargoController_1.alterarCargo);
+Router["delete"]("/test/cargo/:id", cargoController_1.removerCargo);
 module.exports = Router;

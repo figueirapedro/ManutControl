@@ -88,3 +88,24 @@ export async function removerQrcode(req, res) {
 }
 
   // Fim CRUD de QRCode
+
+  export async function inserirQrcodeValidacao(req, res) {
+    const qrcodes = new Model(req.body);
+  
+    try {
+      if(consultaQRCodePorCodigo(qrcodes.Codigo)) throw new Error("Código ja cadastrado")
+      
+      await qrcodes.save();
+      res.send(qrcodes);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  }
+
+  export async function consultaQRCodePorCodigo(codigo?: string) {
+    if ( codigo == undefined ) return false;
+
+    const qrcode = await Model.find({ Codigo: codigo });
+
+    return qrcode[0] == undefined ? false : qrcode[0];
+};

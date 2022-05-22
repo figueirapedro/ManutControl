@@ -3,7 +3,7 @@ import { loginAutenticar } from "../controller/loginController";
 
 const Router = Express.Router();
 
-Router.get("/login", loginAutenticar);
+Router.post("/login", loginAutenticar);
 
 
 export = Router;

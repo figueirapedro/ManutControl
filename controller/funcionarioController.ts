@@ -5,7 +5,7 @@ export async function listarFuncionario(req, res) {
     const funcionarios = await Model.find({});
 
     try {
-        res.send(funcionarios);
+        res.status(200).send(funcionarios);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -14,20 +14,20 @@ export async function inserirFuncionario(req, res) {
     const funcionarios = new Model(req.body);
 
     try {
-        if (typeof funcionarios.CPF != "undefined" && !validarCPF(funcionarios.CPF)) 
-            throw Error("CPF Inválido!");
+        if (!validarCPF(funcionarios.CPF)) 
+            throw new Error("CPF Inválido!");
 
         const consultaCPF = await buscaFuncionarioPorCPF(funcionarios.CPF);
         const consultaEmail = await buscaFuncionarioPorEmail(funcionarios.Email);
 
         if (consultaCPF || consultaEmail) 
-            throw Error("Funcionario já cadastrado!");
+            throw new Error("Funcionario já cadastrado!");
 
         funcionarios.CPF = hashearTexto(funcionarios.CPF);
         funcionarios.Senha = hashearTexto(funcionarios.Senha);
 
         await funcionarios.save();
-        res.send(funcionarios);
+        res.status(200).send(funcionarios);
     } catch (Error) {
         res.status(500).send(Error);
     }
@@ -40,7 +40,7 @@ export async function alterarFuncionario(req, res) {
         if (typeof funcionarios.CPF == "undefined" && !validarCPF(funcionarios.CPF)) throw new Error("CPF Inválido!");
 
         await funcionarios.save();
-        res.send(funcionarios);
+        res.status(200).send(funcionarios);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -51,7 +51,17 @@ export async function removerFuncionario(req, res) {
         const funcionarios = await Model.findByIdAndDelete(req.params.id);
 
         if (!funcionarios) res.status(404).send("No item found");
-        res.status(200).send();
+        res.status(200).send("Removido com sucesso!");
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
+export async function consultarFuncionarioPorId(req, res) {
+    const funcionarios = await Model.find({ _id: req.body.id });
+
+    try {
+        res.status(200).send(funcionarios);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -69,6 +79,14 @@ export async function buscaFuncionarioPorCPF(cpf: string) {
     if ( cpf == undefined ) return false;
 
     const funcionario = await Model.find({ CPF: cpf });
+
+    return funcionario[0] == undefined ? false : funcionario[0];
+};
+
+export async function buscaFuncionarioPorId(id: string) {
+    if ( id == undefined ) return false;
+
+    const funcionario = await Model.find({ _id: id });
 
     return funcionario[0] == undefined ? false : funcionario[0];
 };

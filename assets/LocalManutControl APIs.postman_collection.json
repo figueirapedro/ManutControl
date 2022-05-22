@@ -1,1302 +1,10 @@
 {
 	"info": {
-		"_postman_id": "8bc881a5-e1a9-4cf1-865d-eabaf641ec9c",
+		"_postman_id": "fae4e96a-c94e-42d5-a5e4-2dcbbc20abef",
 		"name": "ManutControl APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Peças",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get Peça",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTE0NDIxNDAsImV4cCI6MTY1MTQ0Mzk0MH0.d3GKOzorvunmjEOuUEaFqqVF7rEcDM6gJtte_4ZxEpE",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/peca",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"peca"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post Peça",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTE0NDIxNDAsImV4cCI6MTY1MTQ0Mzk0MH0.d3GKOzorvunmjEOuUEaFqqVF7rEcDM6gJtte_4ZxEpE",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "Teste",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/peca",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"peca"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put Peça",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "TESTE",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/peca/123",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"peca",
-								"123"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete Peça",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/peca/626ec8771ba64ef65c660744",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"peca",
-								"626ec8771ba64ef65c660744"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Cargo",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get Cargo",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/cargo",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"cargo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post Cargo",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "Teste",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/cargo",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"cargo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put Cargo",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "Teste123",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/cargo/626eb91c59d392f2568a13f9",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"cargo",
-								"626eb91c59d392f2568a13f9"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete Cargo",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/cargo/626eb91c59d392f2568a13f9",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"cargo",
-								"626eb91c59d392f2568a13f9"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Equipamento",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get Equipamento",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/equipamento",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"equipamento"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post Equipamento",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "Teste",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/equipamento",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"equipamento"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put Equipamento",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "TESTE",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/equipamento/2",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"equipamento",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete Equipamento",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/equipamento/2",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"equipamento",
-								"2"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Funcionário",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get Funcionario",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/funcionario",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"funcionario"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post Funcionario",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Email",
-									"value": "vinicius@hotmail.com",
-									"type": "default"
-								},
-								{
-									"key": "Senha",
-									"value": "123",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http:://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/funcionario",
-							"protocol": "http:",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"funcionario"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put Funcionamento",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Nome",
-									"value": "Teste",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/funcionario/1",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"funcionario",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete Funcionario",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/funcionario/626ef97dea5d1538aa9b5c2a",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"funcionario",
-								"626ef97dea5d1538aa9b5c2a"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Criar Funcionário (Login)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Email",
-									"value": "pedro@hotmail.com",
-									"type": "default"
-								},
-								{
-									"key": "Senha",
-									"value": "123",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/funcionario",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"funcionario"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "QRCode",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get QRCode",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode/",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Consulta QRCode",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "codigo",
-									"value": "iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAALLSURBVO3BQY7DVgwFwX6E7n/lziy5+oAg2YkZVsU/rDGKNUqxRinWKMUapVijFGuUYo1SrFGKNUqxRinWKMUapVijFGuUYo1y8VASvknliSR0KidJ+CaVJ4o1SrFGKdYoFy9TeVMSTpJwonKShE7lROVNSXhTsUYp1ijFGuXiw5Jwh8odKl0STlS6JDyRhDtUPqlYoxRrlGKNcvE/pzJJsUYp1ijFGuXixyWhU+mS0Kl0SehUflmxRinWKMUa5eLDVD5J5d+k8l9SrFGKNUqxRrl4WRK+KQmdyicl4b+sWKMUa5RijRL/MEgSOpUuCScqv6xYoxRrlGKNcvFQEjqVLgmdSpeETqVLQqdyotIl4UTliSR0KidJ6FTeVKxRijVKsUaJf3hREp5QeVMSOpU7ktCpnCShUzlJQqfyRLFGKdYoxRrl4qEkPKHSJeGbktCpdConSThJwonKm4o1SrFGKdYo8Q8PJOFEpUvCicodSThReSIJncpJEp5QeaJYoxRrlGKNcvFhSehUuiR0SXhCpUtCp9IloVO5IwknKl0SPqlYoxRrlGKNEv/ww5LwhEqXhE6lS0KncpKEE5U3FWuUYo1SrFEuHkrCN6l0Kl0SOpUuCXck4U0qn1SsUYo1SrFGuXiZypuS8EQSTpJwotIloUtCp9KpdEk4UXmiWKMUa5RijXLxYUm4Q+WOJHQqJ0noVLokdEk4UblDpUvCm4o1SrFGKdYoFz9OpUvCicqJSpeEJ5JwovKmYo1SrFGKNcrFj0tCp3JHEjqVTuUkCScqJ0noVJ4o1ijFGqVYo1x8mMonqZwkoVPpVE6ScKLSJeEOlTcVa5RijVKsUS5eloRvSkKn0qmcJKFTOVHpknCShE6lS0Kn8kSxRinWKMUaJf5hjVGsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5R/AGjcHfP02NykAAAAAElFTkSuQmCC",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode/consulta",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode",
-								"consulta"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post QRCode",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put QRCode",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Id",
-									"value": "wadawdawd",
-									"type": "default"
-								},
-								{
-									"key": "awdawdawd",
-									"value": "adwdddddddddd",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete QRCode",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "awd",
-									"value": "wadawdawd",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) QRCode Teste Google",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode/teste",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode",
-								"teste"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) QRCode para String",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "texto",
-									"value": "youtube.com",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode/string",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode",
-								"string"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) QRCode para DataURL",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "texto",
-									"value": "1111111111",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode/dataurl",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode",
-								"dataurl"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) QRCode para File",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "local",
-									"value": "awd",
-									"type": "default"
-								},
-								{
-									"key": "texto",
-									"value": "d",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/qrcode/file",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"qrcode",
-								"file"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Setor",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get Setor",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "Teste ABC",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/setor",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"setor"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post Setor",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTIxMzU5MTAsImV4cCI6MTY1MjEzNzcxMH0.NGAKEb3vwpqUZrGCHwVgMHzfLFHDfE-b4ieyrrfYZOs",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Nome",
-									"value": "Produção Z",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/setor",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"setor"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put Setor",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Nome",
-									"value": "Produção Tste",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/setor/1",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"setor",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete Setor",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/setor/1",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"setor",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Manutenção",
-			"item": [
-				{
-					"name": "(LOCALHOST) Get Manutenção",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/manutencao",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"manutencao"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Post Manutenção",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "TESTE",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/manutencao",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"manutencao"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Put Manutenção",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "Descricao",
-									"value": "Teste",
-									"type": "default"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/manutencao/1",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"manutencao",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(LOCALHOST) Delete Manutenção",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{access-token}}",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/manutencao/1",
-							"protocol": "http",
-							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"manutencao",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
 		{
 			"name": "Login",
 			"item": [
@@ -1339,18 +47,1575 @@
 							]
 						},
 						"url": {
-							"raw": "http://manutcontrol.us-east-1.elasticbeanstalk.com/api/v1/login",
+							"raw": "http://{{local}}/api/v1/test/login",
 							"protocol": "http",
 							"host": [
-								"manutcontrol",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
+								"{{local}}"
 							],
 							"path": [
 								"api",
 								"v1",
 								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Peças",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Peça",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/peca",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Peça",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTE0NDIxNDAsImV4cCI6MTY1MTQ0Mzk0MH0.d3GKOzorvunmjEOuUEaFqqVF7rEcDM6gJtte_4ZxEpE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/peca",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Peça",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "TESTE",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/peca/123",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"peca",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Peça",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/peca/626ec8771ba64ef65c660744",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"peca",
+								"626ec8771ba64ef65c660744"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cargo",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Cargo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTI1NzA3NzIsImV4cCI6MTY1MjU3MjU3Mn0.J0lnKV_rD848KPx_06jQUuf8Uy087U244GXp05_jRO8",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/api/v1/test/test/cargo",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"test",
+								"cargo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Cargo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/cargo",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cargo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Cargo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "Teste123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/cargo/626eb91c59d392f2568a13f9",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cargo",
+								"626eb91c59d392f2568a13f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Cargo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/cargo/626eb91c59d392f2568a13f9",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cargo",
+								"626eb91c59d392f2568a13f9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Equipamento",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Equipamento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/test/equipamento",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Equipamento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/equipamento",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"equipamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Equipamento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "TESTE",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/equipamento/2",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"equipamento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Equipamento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/equipamento/2",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"equipamento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionário",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Funcionario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/funcionario",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Funcionario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Email",
+									"value": "vinicius@hotmail.com",
+									"type": "default"
+								},
+								{
+									"key": "Senha",
+									"value": "123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http:://{{local}}/api/v1/test/funcionario",
+							"protocol": "http:",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Funcionamento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Nome",
+									"value": "Teste",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/funcionario/1",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"funcionario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Funcionario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/funcionario/626ef97dea5d1538aa9b5c2a",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"funcionario",
+								"626ef97dea5d1538aa9b5c2a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Criar Funcionário (Login)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Email",
+									"value": "pedro@hotmail.com",
+									"type": "default"
+								},
+								{
+									"key": "Senha",
+									"value": "123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/funcionario",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QRCode",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get QRCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode/",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Consulta QRCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "codigo",
+									"value": "iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAALLSURBVO3BQY7DVgwFwX6E7n/lziy5+oAg2YkZVsU/rDGKNUqxRinWKMUapVijFGuUYo1SrFGKNUqxRinWKMUapVijFGuUYo1y8VASvknliSR0KidJ+CaVJ4o1SrFGKdYoFy9TeVMSTpJwonKShE7lROVNSXhTsUYp1ijFGuXiw5Jwh8odKl0STlS6JDyRhDtUPqlYoxRrlGKNcvE/pzJJsUYp1ijFGuXixyWhU+mS0Kl0SehUflmxRinWKMUa5eLDVD5J5d+k8l9SrFGKNUqxRrl4WRK+KQmdyicl4b+sWKMUa5RijRL/MEgSOpUuCScqv6xYoxRrlGKNcvFQEjqVLgmdSpeETqVLQqdyotIl4UTliSR0KidJ6FTeVKxRijVKsUaJf3hREp5QeVMSOpU7ktCpnCShUzlJQqfyRLFGKdYoxRrl4qEkPKHSJeGbktCpdConSThJwonKm4o1SrFGKdYo8Q8PJOFEpUvCicodSThReSIJncpJEp5QeaJYoxRrlGKNcvFhSehUuiR0SXhCpUtCp9IloVO5IwknKl0SPqlYoxRrlGKNEv/ww5LwhEqXhE6lS0KncpKEE5U3FWuUYo1SrFEuHkrCN6l0Kl0SOpUuCXck4U0qn1SsUYo1SrFGuXiZypuS8EQSTpJwotIloUtCp9KpdEk4UXmiWKMUa5RijXLxYUm4Q+WOJHQqJ0noVLokdEk4UblDpUvCm4o1SrFGKdYoFz9OpUvCicqJSpeEJ5JwovKmYo1SrFGKNcrFj0tCp3JHEjqVTuUkCScqJ0noVJ4o1ijFGqVYo1x8mMonqZwkoVPpVE6ScKLSJeEOlTcVa5RijVKsUS5eloRvSkKn0qmcJKFTOVHpknCShE6lS0Kn8kSxRinWKMUaJf5hjVGsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5R/AGjcHfP02NykAAAAAElFTkSuQmCC",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode/consulta",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode",
+								"consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post QRCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put QRCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Id",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "awdawdawd",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete QRCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "awd",
+									"value": "wadawdawd",
+									"type": "default"
+								},
+								{
+									"key": "Id",
+									"value": "adwdddddddddd",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode Teste Google",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode/teste",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode",
+								"teste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode para String",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "texto",
+									"value": "youtube.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode/string",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode",
+								"string"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode para DataURL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "texto",
+									"value": "1111111111",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode/dataurl",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode",
+								"dataurl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) QRCode para File",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "local",
+									"value": "awd",
+									"type": "default"
+								},
+								{
+									"key": "texto",
+									"value": "d",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/qrcode/file",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qrcode",
+								"file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setor",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Setor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "Teste ABC",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/setor",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"setor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Setor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTIxMzU5MTAsImV4cCI6MTY1MjEzNzcxMH0.NGAKEb3vwpqUZrGCHwVgMHzfLFHDfE-b4ieyrrfYZOs",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Nome",
+									"value": "Produção Z",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/setor",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"setor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Setor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Nome",
+									"value": "Produção Tste",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/setor/1",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"setor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Setor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/setor/1",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"setor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manutenção",
+			"item": [
+				{
+					"name": "(LOCALHOST) Get Manutenção",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/manutencao",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manutencao",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Post Manutenção",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "TESTE",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/manutencao",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manutencao",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Put Manutenção",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/manutencao/1",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manutencao",
+								"test",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(LOCALHOST) Delete Manutenção",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status Code recebido 200\"] = responseCode.code === 200"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{local}}/api/v1/test/manutencao/1",
+							"protocol": "http",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manutencao",
+								"test",
+								"1"
 							]
 						}
 					},
@@ -1365,7 +1630,10 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					""
+					"pm.request.headers.add({",
+					"  key: 'x-access-token',",
+					"  value: pm.environment.get(\"access-token\")",
+					"});"
 				]
 			}
 		},
@@ -1374,7 +1642,6 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					"pm.environment.set(\"variable_key\", \"variable_value\");",
 					"pm.test(\"Status code is 200\", function () {",
 					"    pm.response.to.have.status(200);",
 					"});",
@@ -1394,7 +1661,7 @@
 	"variable": [
 		{
 			"key": "awsURL",
-			"value": "http://manutcontrol.us-east-1.elasticbeanstalk.com/",
+			"value": "http://{{local}}/",
 			"type": "default"
 		},
 		{
@@ -1414,7 +1681,12 @@
 		},
 		{
 			"key": "URL",
-			"value": "http://manutcontrol.us-east-1.elasticbeanstalk.com/",
+			"value": "http://{{local}}/",
+			"type": "default"
+		},
+		{
+			"key": "access-token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZlZmNlNWMwNzBmYjgzNDdiM2Q3NjciLCJpYXQiOjE2NTI1Njg4OTQsImV4cCI6MTY1MjU3MDY5NH0.JIw525lVKVIbF_E54WQ-Cg1JiwYluhBCTgCrHPXPJIs",
 			"type": "default"
 		}
 	]

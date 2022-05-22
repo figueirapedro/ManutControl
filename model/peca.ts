@@ -71,3 +71,36 @@ const PecaSchema = new Mongoose.Schema({
 })
 
 export const Model = Mongoose.model("Peca", PecaSchema);
+
+//Schema com validacao para Testes
+
+const PecaSchemaTest = new Mongoose.Schema({
+    Descricao: {
+        type: String,
+        required: true
+
+    },
+    Quantidade: {
+        type: Number,
+        required: true
+
+    },
+    QuantidadeMinima: {
+        type: Number,
+        required: true
+
+    },
+    Custo: {
+        type: String,
+        required: true
+
+    },
+    DataEntrada: {
+        type: Date,
+        required: true
+
+    },
+    DataSaida: Date,
+})
+
+//export const ModelTest = Mongoose.model("Peca", PecaSchemaTest);
